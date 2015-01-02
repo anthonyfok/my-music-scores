@@ -1,5 +1,6 @@
 % Typeset with Frescobaldi 2.17.1
 % by Anthony Fok in Edmonton, AB, Canada, on 2014-12-30
+% Edited 2015-01-02.
 
 \version "2.18.2"
 
@@ -68,14 +69,14 @@ verseThree = \lyricmode {
   \set stanza = #"2. "
   祢 被 尊 為 安 慰 之 \fpa 神， 至 高 天 主 特 殊 寵 \fpa 恩。
   \set stanza = #"2. "
-  祢 是 活 泉 神 火 聖 \fpa 愛， 眾 善 靈 的 聖 德 馥 \fpa 芬。
+  祢 是 活 泉、 神 \fpa 火、 聖 \fpa 愛， 眾 善 靈 的 聖 德 馥 \fpa 芬。
 }
 
 verseFour = \lyricmode {
   \pinyinStanza
   Nǐ bèi zūn wéi Ān -- wèi zhī Shén,
   zhì -- gāo Tiān -- zhǔ tè -- shū chǒng -- ēn.
-  Nǐ shì huó -- quán shén -- huǒ shèng ài,
+  Nǐ shì huó -- quán, shén -- huǒ, shèng ài,
   zhòng shàn líng de shèng -- dé fù -- fēn.  
 }
 
@@ -90,7 +91,7 @@ verseSix = \lyricmode {
   \pinyinStanza
   Nǐ shì qī shén -- ēn de shī -- zhǔ,
   quán -- néng Shèng -- fù jiān -- qiáng yòu bì.
-  Nǐ shì shèng fù kǎi -- rán xǔ -- nuò,
+  Nǐ shì Shèng -- fù kǎi -- rán xǔ -- nuò,
   zuò wǒ hóu -- shé dǎo wǒ yán -- yǔ.
 }
 
@@ -118,7 +119,7 @@ verseNine = \lyricmode {
 
 verseTen = \lyricmode {
   \pinyinStanza
-  Qū -- zhú dí chóu xī shǐ yuǎn dùn,
+  Qū -- zhú dí -- chóu xī shǐ yuǎn dùn,
   huì cì wǒ -- men zhū -- shì píng -- shùn,
   bǐ néng bì -- miǎn zhū -- bān wéi -- hài,
   lài Nǐ lǐng -- dǎo ān -- wěn qián -- jìn.
@@ -135,7 +136,7 @@ verseTwelve = \lyricmode {
   \pinyinStanza
   Shǐ néng jiè Nǐ huò shí Shèng -- fù,
   yǔ -- qí wéi -- yī suǒ shēng Shèng -- zǐ.
-  Nǐ shì fù zǐ gòng fā zhī shén,
+  Nǐ shì Fù Zǐ gòng fā zhī shén,
   wǒ qián xìn Nǐ bì -- shēng bù yú.
 }
 
