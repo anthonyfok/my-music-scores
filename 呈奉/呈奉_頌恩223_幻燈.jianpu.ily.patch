@@ -1,0 +1,112 @@
+--- "a/\345\221\210\345\245\211_\351\240\214\346\201\251223_\345\271\273\347\207\210.jianpu.ily"	2017-02-07 17:31:35.978829054 -0700
++++ "b/\345\221\210\345\245\211_\351\240\214\346\201\251223_\345\271\273\347\207\210.jianpu.ily"	2017-02-07 17:24:26.060334775 -0700
+@@ -104,7 +104,7 @@
+   \applyOutput #'Voice #note-five g'4[
+   \applyOutput #'Voice #note-four f'4]
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 |
+-  \applyOutput #'Voice #note-three e'4[ ~
++  \applyOutput #'Voice #note-three e'4 ~
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 #(define (note-dashthree grob grob-origin context)
+   (if (grob::has-interface grob 'note-head-interface)
+     (begin
+@@ -115,7 +115,7 @@
+   \applyOutput #'Voice #note-dashthree e'4
+ \set stemLeftBeamCount = #0
+ \set stemRightBeamCount = #1
+-  \applyOutput #'Voice #note-five g'8
++  \applyOutput #'Voice #note-five g'8[
+ \set stemLeftBeamCount = #1
+ \set stemRightBeamCount = #1
+   \applyOutput #'Voice #note-four f'8]
+@@ -139,7 +139,7 @@
+   \applyOutput #'Voice #note-six a'4
+   \applyOutput #'Voice #note-seven b'4]
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 |
+-  \applyOutput #'Voice #note-one c''4[^. ~
++  \applyOutput #'Voice #note-one c''4^. ~
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 #(define (note-dashone grob grob-origin context)
+   (if (grob::has-interface grob 'note-head-interface)
+     (begin
+@@ -148,7 +148,7 @@
+           (make-lower-markup 0.5 (make-bold-markup "–")))))))
+   \applyOutput #'Voice #note-dashone c''4 ~
+   \applyOutput #'Voice #note-dashone c''4
+-  \applyOutput #'Voice #note-five g'4]
++  \applyOutput #'Voice #note-five g'4
+ |
+   \applyOutput #'Voice #note-three e''4.[^.
+ \set stemLeftBeamCount = #0
+@@ -179,7 +179,7 @@
+ \set stemRightBeamCount = #1
+   \applyOutput #'Voice #note-one c''8]^.
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 |
+-  \applyOutput #'Voice #note-five g'4[ ~
++  \applyOutput #'Voice #note-five g'4 ~
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 #(define (note-dashfive grob grob-origin context)
+   (if (grob::has-interface grob 'note-head-interface)
+     (begin
+@@ -188,7 +188,7 @@
+           (make-lower-markup 0.5 (make-bold-markup "–")))))))
+   \applyOutput #'Voice #note-dashfive g'4 ~
+   \applyOutput #'Voice #note-dashfive g'4
+-  \applyOutput #'Voice #note-five g'4]
++  \applyOutput #'Voice #note-five g'4
+ |
+   \applyOutput #'Voice #note-three e''4.[^.
+ \set stemLeftBeamCount = #0
+@@ -214,12 +214,12 @@
+   \applyOutput #'Voice #note-four f''4[^.
+   \applyOutput #'Voice #note-seven b'4]
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 |
+-  \applyOutput #'Voice #note-one c''4[^. ~
++  \applyOutput #'Voice #note-one c''4^. ~
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-dashone c''4 ~
+   \applyOutput #'Voice #note-dashone c''4
+ \set stemLeftBeamCount = #0
+ \set stemRightBeamCount = #1
+-  \applyOutput #'Voice #note-five g'8
++  \applyOutput #'Voice #note-five g'8[
+ (
+ \set stemLeftBeamCount = #1
+ \set stemRightBeamCount = #1
+@@ -250,12 +250,12 @@
+   \applyOutput #'Voice #note-five g'4[
+   \applyOutput #'Voice #note-four f'4]
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 |
+-  \applyOutput #'Voice #note-three e'4[ ~
++  \applyOutput #'Voice #note-three e'4 ~
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-dashthree e'4 ~
+   \applyOutput #'Voice #note-dashthree e'4
+ \set stemLeftBeamCount = #0
+ \set stemRightBeamCount = #1
+-  \applyOutput #'Voice #note-five g'8
++  \applyOutput #'Voice #note-five g'8[
+ \set stemLeftBeamCount = #1
+ \set stemRightBeamCount = #1
+   \applyOutput #'Voice #note-four f'8]
+@@ -279,10 +279,10 @@
+   \applyOutput #'Voice #note-six a'4
+   \applyOutput #'Voice #note-seven b'4]
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 |
+-  \applyOutput #'Voice #note-one c''4[^. ~
++  \applyOutput #'Voice #note-one c''4^. ~
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-dashone c''4 ~
+   \applyOutput #'Voice #note-dashone c''4
+-  \applyOutput #'Voice #note-five g'4]
++  \applyOutput #'Voice #note-five g'4
+ |
+   \applyOutput #'Voice #note-three e''4.[^.
+ \set stemLeftBeamCount = #0
+@@ -313,10 +313,10 @@
+ \set stemRightBeamCount = #1
+   \applyOutput #'Voice #note-one c''8]^.
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 |
+-  \applyOutput #'Voice #note-five g'4[ ~
++  \applyOutput #'Voice #note-five g'4 ~
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-dashfive g'4 ~
+   \applyOutput #'Voice #note-dashfive g'4
+-  \applyOutput #'Voice #note-five g'4]
++  \applyOutput #'Voice #note-five g'4
+ |
+   \applyOutput #'Voice #note-three e''4.[^.
+ \set stemLeftBeamCount = #0
