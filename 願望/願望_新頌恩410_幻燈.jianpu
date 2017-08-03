@@ -1,0 +1,32 @@
+1=D
+2/4
+
+LP:
+\override Beam.breakable = ##t
+
+\repeat unfold 4 {
+:LP
+
+3 q3 ( q4 ) 5 q6 ( q7 )    1' q7 q6 5 -
+3 q3 ( q4 ) 5 q4 ( q3 )    2 ( - 2 ) -
+LP:
+\break
+:LP
+3 q3 ( q4 ) 5 q6 ( q7 )    1' q4 q6 5. q3
+3 3 2. q1                  1 ( - 1. )
+LP:
+\bar "" \break
+:LP
+q1
+6 q4 q6 5 1'               5. q4 3 q3 q2
+1 1 q7, ( q1 ) q2 q4       3 ( - 3 ) -
+LP:
+\break
+:LP
+6. q7 1' q7 ( q6 )         5. q3 1 -
+4. q3 7, 2                 1 ( - 1 ) -
+
+LP:
+% \bar "|."
+}
+:LP
