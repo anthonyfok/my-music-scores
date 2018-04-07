@@ -1,4 +1,4 @@
-% Engraved by Anthony Fok on 2018-03-23
+% Engraved by Anthony Fok on 2018-03-23 and revised 2018-04-07
 % in Edmonton, Alberta, Canada
 
 \version "2.18.2"
@@ -11,7 +11,6 @@
   }
   subtitle = "Hopscotch"
 
-  
   composer = \markup {
     \column {
       \line {
@@ -29,7 +28,7 @@
   copyright = \markup {
     \small \lower #5 {
       \kai 為中文學校植譜
-      (2018-03-23 \concat { \kai 修訂版 ) }
+      (2018-04-07 \concat { \kai 修訂版 ) }
     }
   }
 
@@ -134,7 +133,7 @@ verseJp = \lyricmode {
   "siu2" "siu2" "tin1" "dei6" "tiu3" "fei1" "gei1"
   "daai3" "zung3" "jat1" "cai4" "coeng3" "sau2" "go1"
   "hoi1" "hoi1" "sam1" "sam1" "zan1" "jau5" "ceoi3"
-  
+
   "wut6" "put3" "cung1" "ming4" "duk6" "haa5" "syu1"
   "tin1" "tin1" "se2" "zi6" "siu3" "hei1" "hei1"
   "daai3" "zung3" "jat1" "cai4" "tiu3" "fei1" "gei1"
@@ -150,10 +149,10 @@ verse = \lyricmode {
   大 眾 一 齊 唱 首 \bd 歌，
   開 開 心 心 真 有 \bd 趣！
 
-  活 潑 聰 明 讀 下 \bd 書，
+  活 潑 聰 明 讀 吓 \bd 書，
   天 天 寫 字 笑 嘻 \bd 嘻；
   大 眾 一 齊 跳 飛 \bd 機，
-  \bd 一、 \bd 二、 \bd 三， 到 \bd 你！
+  一 二 三 到 \bd 你！
 }
 
 \score {
@@ -165,11 +164,9 @@ verse = \lyricmode {
     } {
       \new Voice = "soprano" { \soprano }
     }
-    %{
     \new Lyrics \with {
       \override VerticalAxisGroup #'staff-affinity = #CENTER
     } \lyricsto "soprano" \verseJp
-    %}
     \new Lyrics \with {
       \override VerticalAxisGroup #'staff-affinity = #CENTER
     } \lyricsto "soprano" \verse

@@ -1,15 +1,15 @@
-HYMN := 跳飛機
+SONG := 跳飛機
 
-all: $(HYMN).pdf $(HYMN).jianpu.ily $(HYMN)-0.png
+all: $(SONG).pdf $(SONG).jianpu.ily $(SONG).png
 
 %.pdf: %.ly %.jianpu.ily
 	lilypond $<
 
-%-0.png: %.pdf
-	rm -f $(HYMN)-*.png
-	convert -density 139.79 $< $(HYMN).png
-	pngquant -f --ext .png --quality 100 $(HYMN)-*.png
-	optipng $(HYMN)-*.png
+%.png: %.pdf
+	rm -f $(SONG).png
+	convert -density 139.79 $< $(SONG).png
+	pngquant -f --ext .png --quality 100 $(SONG).png
+	optipng $(SONG).png
 
 %.ly: %.jianpu.ily
 
