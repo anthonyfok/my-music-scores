@@ -1,7 +1,9 @@
 HYMN := 呈奉_頌恩223_幻燈
 
-all: 呈奉_頌恩223.pdf 呈奉_頌恩223.jianpu.ily \
-	$(HYMN).pdf $(HYMN).jianpu.ily $(HYMN)-0.png
+# Excluding old files:
+# 呈奉_頌恩223.pdf 呈奉_頌恩223.jianpu.ily
+
+all: $(HYMN).pdf $(HYMN).jianpu.ily $(HYMN)-0.png
 
 %.pdf: %.ly %.jianpu.ily
 	lilypond $<
