@@ -1,4 +1,5 @@
 % 2016-05-20 in Edmonton
+% Revised on 2017-11-21 (餅是→餅成 in Verse 2)
 
 \version "2.18.2"
 \include "../definition.ily"
@@ -75,7 +76,7 @@ verseOne = \lyricmode {
 
 verseTwo = \lyricmode {
   \set stanza = #"2. "
-  餅 是 救 主 聖 \bd 身， 萬 世 天 糧 主 饋 \bd 贈；
+  餅 成 救 主 聖 \bd 身， 萬 世 天 糧 主 饋 \bd 贈；
   酒 要 成 為 生 命 活 泉 \bd 水， 潔 淨 靈 魂 罪 \bd 惡。
   耶 穌 捐 軀 捨 棄 生 \bd 命， 犧 牲 贖 罪 為 世 \bd 人；
   寧 死 交 出 體 血 相 \bd 贈， 主 愛 極 真 善 \bd 美。

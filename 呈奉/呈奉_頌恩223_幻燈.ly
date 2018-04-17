@@ -1,5 +1,7 @@
 % Engraved by Anthony Fok on 2016-07-08
-% and updated in 2017-02-02 and 2017-02-02
+% Updated on 2017-02-02 and 2017-02-07
+% Revised on 2017-11-21 (餅是→餅成 in Verse 2)
+% Improved formatting on 2018-04-16
 % in Edmonton, Alberta, Canada
 
 \version "2.18.2"
@@ -11,10 +13,12 @@
     \setbgcolor
     \with-color #yellow
     \larger\larger
-    \override #'(font-name . "HanWangLiSuMedium")
+    %\override #'(font-name . "HanWangLiSuMedium")
+    \kai
     "呈 奉"
   }
 
+  %{
   poet = \markup\with-color #white \smaller {
     \kai 頌恩 \smaller (2005)
     \concat { \kai 第 223 \kai 首 }
@@ -29,7 +33,27 @@
       \line { \kai 編：蔡詩亞 (March 17 MMII \concat { \kai 香港 ) } }
     }
   }
+  %}
 
+  composer = \markup {
+    \with-color #white {
+      \concat { \kai 《頌恩》
+                \smaller {
+                  (2011 \kai 年 11 \kai 月修正版 )
+                }
+      }
+      \concat { \kai 第 223 \kai 首 }
+    }
+  }
+  
+  copyright = \markup\smaller\with-color #white {
+    \smaller { © MMV }
+    \kai 天主教香港教區
+    \hspace #5
+    \kai 詞及曲：李浩泉 \smaller (1996)
+    \hspace #3
+    \kai 編：蔡詩亞 (March 17 MMII \concat { \kai 香港 ) }
+  }
   % Remove default LilyPond tagline
   tagline = ##f
 }
@@ -41,14 +65,14 @@
   left-margin = 0.5\in
   right-margin = 0.5\in
   top-margin = 0.3\in
-  bottom-margin = 0.8\in
+  bottom-margin = 0.15\in
 
-  %ragged-bottom = ##t
+  ragged-bottom = ##t
 
   %top-markup-spacing.padding = #1
   top-system-spacing.padding = #6
   %markup-system-spacing.padding = #1
-  %system-system-spacing.padding = #5
+  system-system-spacing.padding = #2
   %print-all-headers = ##t
 
 
@@ -121,7 +145,7 @@ verse = \lyricmode {
   期 可 分 享 主 祢 生 \bd 命， 使 我 更 加 像 \bd 祢。
 
   \set stanza = #"2. "
-  餅 是 救 主 聖 \bd 身， 萬 世 天 糧 主 饋 \bd 贈；
+  餅 成 救 主 聖 \bd 身， 萬 世 天 糧 主 饋 \bd 贈；
   酒 要 成 為 生 命 活 泉 \bd 水， 潔 淨 靈 魂 罪 \bd 惡。
   耶 穌 捐 軀 捨 棄 生 \bd 命， 犧 牲 贖 罪 為 世 \bd 人；
   寧 死 交 出 體 血 相 \bd 贈， 主 愛 極 真 善 \bd 美。
@@ -142,7 +166,7 @@ verse = \lyricmode {
       \override VerticalAxisGroup #'staff-affinity = #CENTER
     } \lyricsto "soprano" \verse
   >>
-\layout {
+  \layout {
     indent = #0
     \context {
       \Score
