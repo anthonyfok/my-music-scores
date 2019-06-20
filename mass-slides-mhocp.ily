@@ -23,7 +23,7 @@ setbgcolor = \markup {
 #(define-markup-command (kai layout props text) (markup?)
   "Set Kai font."
   (interpret-markup layout props
-    (markup #:override '(font-name . "DFPHKStdKai-B5") text)))
+    (markup #:override '(font-name . "Century Schoolbook L,DFKai-SB") text)))
 
 #(define-markup-command (lishu layout props text) (markup?)
   "Set Li Shu font."
@@ -35,7 +35,32 @@ setbgcolor = \markup {
   (interpret-markup layout props
     (markup #:override '(font-name . "HanWangYanKai") text)))
 
+#(define-markup-command (hei layout props text) (markup?)
+  "Set Hei font."
+  (interpret-markup layout props
+    (markup #:override '(font-name . "HanWangHeiHeavy") text)))
+
+#(define-markup-command (ming layout props text) (markup?)
+  "Set Ming font."
+  (interpret-markup layout props
+    (markup #:override '(font-name . "HanWangMingBold") text)))
+
+#(define-markup-command (mingheavy layout props text) (markup?)
+  "Set MingHeavy font."
+  (interpret-markup layout props
+    (markup #:override '(font-name . "HanWangMingHeavy") text)))
+
+#(define-markup-command (serifbold layout props text) (markup?)
+  "Set Noto Serif TC Bold font."
+  (interpret-markup layout props
+    (markup #:override '(font-name . "Noto Serif TC Black") text)))
 
 % Special "paper size" for 16:9 slideshow
 
+#(set! paper-alist (cons '("1920x1080" . (cons (* 16 in) (* 9 in))) paper-alist))
+
 #(set! paper-alist (cons '("1280x720" . (cons (* 9.16 in) (* 5.1525 in))) paper-alist))
+
+#(set! paper-alist (cons '("1280x480" . (cons (* 9.16 in) (* 3.435 in))) paper-alist))
+
+#(set! paper-alist (cons '("1280x540" . (cons (* 9.16 in) (* 3.864375 in))) paper-alist))
