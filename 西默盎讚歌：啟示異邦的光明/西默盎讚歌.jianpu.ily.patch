@@ -1,0 +1,96 @@
+--- "a/\350\245\277\351\273\230\347\233\216\350\256\232\346\255\214.jianpu.ily"	2020-01-31 16:40:37.857138514 -0700
++++ "b/\350\245\277\351\273\230\347\233\216\350\256\232\346\255\214.jianpu.ily"	2020-01-31 16:50:39.905443037 -0700
+@@ -125,7 +125,6 @@
+   \applyOutput #'Voice #note-seven b8]-\tweak #'X-offset #0.6 _.
+ )
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-one c'4[ ~
+-\fermata
+   \applyOutput #'Voice #note-dashone c'4]
+ |
+   \applyOutput #'Voice #note-five g'4[
+@@ -195,12 +194,12 @@
+   \applyOutput #'Voice #note-seven b8]-\tweak #'X-offset #0.6 _.
+ )
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 |
+-  \applyOutput #'Voice #note-one c'4[ ~
++  \applyOutput #'Voice #note-one c'4 ~
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-dashone c'4 ~
+   \applyOutput #'Voice #note-dashone c'4
+ \set stemLeftBeamCount = #0
+ \set stemRightBeamCount = #1
+-  \applyOutput #'Voice #note-four f'8
++  \applyOutput #'Voice #note-four f'8[
+ \set stemLeftBeamCount = #1
+ \set stemRightBeamCount = #1
+   \applyOutput #'Voice #note-two d'8]
+@@ -252,7 +251,6 @@
+   \applyOutput #'Voice #note-seven b8]-\tweak #'X-offset #0.6 _.
+ )
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-one c'4[ ~
+-\fermata
+   \applyOutput #'Voice #note-dashone c'4]
+ |
+   \applyOutput #'Voice #note-five g'4[
+@@ -334,12 +332,12 @@
+   \applyOutput #'Voice #note-six a'8]
+ )
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0 |
+-  \applyOutput #'Voice #note-five g'4[ ~
++  \applyOutput #'Voice #note-five g'4 ~
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-dashfive g'4 ~
+   \applyOutput #'Voice #note-dashfive g'4
+ \set stemLeftBeamCount = #0
+ \set stemRightBeamCount = #1
+-  \applyOutput #'Voice #note-three e'8
++  \applyOutput #'Voice #note-three e'8[
+ \set stemLeftBeamCount = #1
+ \set stemRightBeamCount = #1
+   \applyOutput #'Voice #note-four f'8]
+@@ -388,10 +386,9 @@
+ \set stemRightBeamCount = #1
+   \applyOutput #'Voice #note-seven b8]-\tweak #'X-offset #0.6 _.
+ )
+-\once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-one c'4[ ~
+-\fermata
++\once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-one c'4 ~
+   \applyOutput #'Voice #note-dashone c'4
+-  \applyOutput #'Voice #note-three e'4
++  \applyOutput #'Voice #note-three e'4[
+   \applyOutput #'Voice #note-six a'4
+   \applyOutput #'Voice #note-two d'4
+ \set stemLeftBeamCount = #0
+@@ -418,10 +415,10 @@
+ \set stemRightBeamCount = #1
+   \applyOutput #'Voice #note-four f'8]
+ \time 2/4
+-\once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-one c'4[ ~
++\once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-one c'4 ~
+   \applyOutput #'Voice #note-dashone c'4
+ \time 4/4
+-  \applyOutput #'Voice #note-two d'4
++  \applyOutput #'Voice #note-two d'4[
+   \applyOutput #'Voice #note-three e'4
+   \applyOutput #'Voice #note-six a4-\tweak #'Y-offset #-1.2 -\tweak #'X-offset #0.6 _.
+   \applyOutput #'Voice #note-six a4-\tweak #'Y-offset #-1.2 -\tweak #'X-offset #0.6 _.
+@@ -455,11 +452,11 @@
+ \set stemRightBeamCount = #1
+   \applyOutput #'Voice #note-two d'8]
+ )
+-\once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-one c'4[ ~
++\once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-one c'4 ~
+   \applyOutput #'Voice #note-dashone c'4
+ \set stemLeftBeamCount = #0
+ \set stemRightBeamCount = #1
+-  \applyOutput #'Voice #note-four f'8
++  \applyOutput #'Voice #note-four f'8[
+ \set stemLeftBeamCount = #1
+ \set stemRightBeamCount = #1
+   \applyOutput #'Voice #note-two d'8]
+@@ -507,7 +504,6 @@
+   \applyOutput #'Voice #note-seven b8]-\tweak #'X-offset #0.6 _.
+ )
+ \once \override Tie #'transparent = ##t \once \override Tie #'staff-position = #0   \applyOutput #'Voice #note-one c'4[ ~
+-\fermata
+   \applyOutput #'Voice #note-dashone c'4]
+ \bar "|."
+ } }
