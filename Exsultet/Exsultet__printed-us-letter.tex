@@ -1,0 +1,156 @@
+% !TEX program = LuaLaTeX+se
+% !TEX encoding = UTF-8
+
+% This is a simple template for a LuaLaTeX document using gregorio scores.
+
+\documentclass[12pt]{article} % use larger type; default would be 10pt
+%\special{papersize=8.0in,4.5in}
+% usual packages loading:
+\usepackage{luatexja}
+\usepackage{luatexja-fontspec}
+%\usepackage{fontspec}
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{pagecolor}
+
+%\usepackage[a6paper, margin=0.2in]{geometry} % See geometry.pdf to learn the layout options. There are lots.
+
+\usepackage[letterpaper, margin=1in]{geometry} % or letterpaper (US) or a5paper or....
+%\usepackage[paperwidth=6.0in, paperheight=3.375in, margin=0.2in]{geometry} % See geometry.pdf to learn the layout options. There are lots.
+
+%\usepackage[paperwidth=6.0in, paperheight=3.375in, margin=0.2in]{geometry}
+%\usepackage[paperwidth=5.0in, paperheight=2.8125in, margin=0.2in]{geometry}
+%\usepackage[paperwidth=12cm, paperheight=6.75cm, margin=0.25cm]{geometry}
+%\usepackage[paperwidth=128mm, paperheight=72mm, margin=3mm]{geometry}
+%\usepackage[paperwidth=14cm, paperheight=7.785cm, margin=0.25cm]{geometry}
+
+\usepackage{gregoriotex} % for gregorio score inclusion
+%\usepackage{fullpage} % to reduce the margins
+\usepackage{libertine} % Decent (free) font for Gregorian, but should be changed if you have high standards
+%\usepackage[lining,tabular]{ebgaramond}
+
+%\usepackage[utf8]{luainputenc}
+
+%\setmainjfont[%
+%  BoldFont={HanWangMingHeavy},%
+  %ItalicFont={AR PL UKai HK},%
+%]{cwTeXYen}
+%]{STZhongsong}
+%]{Adobe Ming Std}
+%]{HanWangMingBold}
+
+
+
+% Strange,the following is not working:
+%\jfont\hwmb=file:wt003.ttf:jfm=ujis
+%\jfont\stzhs=file:STZHONGS.TTF:jfm=ujis
+%\jfont\hwmb=HanWangMingBold:jfm=ujis
+%\jfont\stzhs=STZhongsong:jfm=ujis
+%\ltjdeclarealtfont{\hwmb}{\stzhs}{"3000-"30FF, {-1}-{-1}}
+
+
+%\font\fontTitle=file:STZHONGS at 24pt
+%\font\fontHeading=file:STZHONGS at 15pt
+%\font\fontLyrics=file:STZHONGS at 8pt
+%%\font\fontLyrics=file:wt003 at 14pt
+%\font\fontCommentary=file:STZHONGS at 12pt
+%\font\fontFootnote=file:STZHONGS at 7pt
+
+% HanWangMingBold (wt003) 沒有「祢」字？
+%\font\fontLyrics=file:wt003 at 12pt \fontLyrics
+%\setmainjfont[Vertical=RotatedGlyphs]{cwTeXKai}
+%\setmainjfont[NoEmbed]{AdobeMingStd-Light}
+
+% These fonts work with Gregorio 4.1.4:
+%\setmainjfont{Adobe Ming Std}
+%\setmainjfont{Adobe Song Std}
+%\setmainjfont{AR PL UKai TW}
+%\setmainjfont{AR PL UMing TW}
+
+%\setmainjfont{DFKai-SB}
+
+% These fonts did not work before
+%   ! error:  (node lib): lua <node> expected, not an object with type nil
+% but now they do:
+
+%\setmainjfont{cwTeXKai}
+\setmainjfont{Noto Serif CJK TC SemiBold}
+%\setmainjfont{Noto Sans CJK HK Medium}
+%\setmainjfont{cwTeXMing}
+%\setmainjfont{WenYue-GuDianMingChaoTi-NC-W5}
+%\setmainjfont{STZhongSong}
+%\setmainjfont{FandolSong}
+%\setmainjfont{HanWangMingBold}
+%\setmainjfont{HanWangYanKai}
+
+%\pagestyle{fancy}
+%\pagestyle{empty}
+\setlength\parindent{0pt}
+
+% to change the font to something better, you can install the kpfonts package (if not already installed). To do so
+% go open the "TeX Live Manager" in the Menu Start->All Programs->TeX Live 2010
+
+\definecolor{deepbrown}{RGB}{132, 60, 12}
+\definecolor{wheat}{RGB}{245, 222, 179}
+%\pagecolor{deepbrown}
+% \pagecolor{wheat}
+
+% here we begin the document
+\begin{document}
+
+
+% The title:
+\begin{center}\begin{Large}%
+\textsc{\textbf{\Large 逾越頌（短式）}}%
+\end{Large}
+
+The Shorter Form of the Easter Proclamation
+
+適合粵語誦唱（錄自天主教澳門教區2020年4月11日聖週六逾越節守夜禮直播）
+\end{center}
+
+% grechangestaffsize defaults to 17
+%\grechangestaffsize{20}
+%\grechangedim{translationheight}{1.0cm}{scalable}
+
+%\grechangedim{baselineskip}{110pt plus 5pt minus 5pt}{scalable}
+\grechangedim{baselineskip}{70pt plus 5pt minus 5pt}{scalable}
+
+% No, this setting is not for us.
+%\gresettranslationcentering{center}
+
+% Here we set the space around the initial.
+% Please report to http://gregorio-project.github.io/gregoriotex/details.html for more details and options
+\grechangedim{beforeinitialshift}{2.2mm}{scalable}
+\grechangedim{afterinitialshift}{2.2mm}{scalable}
+
+%\gresetinitiallines{0}
+
+% Here we set the initial font. Change 43 if you want a bigger initial.
+%\grechangestyle{initial}{\fontsize{43}{43}\selectfont}%
+
+%\grechangestyle{translation}{\fontsize{10}{10}\selectfont\it}%
+%\grechangestyle{translation}{\fontsize{15}{15}\selectfont}%
+
+% We set red lines here, comment it if you want black ones.
+\gresetlinecolor{gregoriocolor}
+
+% We set VII above the initial manually
+%\grechangestyle{annotation}{\small\bfseries}
+%\greannotation{Comm.}
+%\greannotation{\textsc{vi}}
+
+% We use the "commentary" field of the score in the top right corner:
+\gresetheadercapture{commentary}{grecommentary}{string}
+
+% and finally we include the score. The file must be in the same directory as this one.
+
+\newcommand{\heading}[1]{\bigskip\bigskip\noindent{\fontHeading #1}\par\medskip}
+
+%\GreLoadSpaceConf{vichi}
+
+%\gregorioscore[a]{Salve_Regina_simple_tone_zh}
+\begin{large}
+\gregorioscore[a]{Exsultet_zh-yue}
+\end{large}
+
+\end{document}
