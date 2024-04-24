@@ -55,6 +55,16 @@ setbgcolor = \markup {
   (interpret-markup layout props
     (markup #:override '(font-name . "Noto Serif TC Black") text)))
 
+#(define-markup-command (notoserifcjkhksemibold layout props text) (markup?)
+  "Set Noto Serif CJK HK SemiBold font."
+  (interpret-markup layout props
+    (markup #:override '(font-name . "C059 Roman,Noto Serif CJK HK SemiBold") text)))
+
+#(define-markup-command (notoserifcjkhkbold layout props text) (markup?)
+  "Set Noto Serif CJK HK SemiBold font."
+  (interpret-markup layout props
+    (markup #:override '(font-name . "C059 Roman,Noto Serif CJK HK Bold") text)))
+
 % Special "paper size" for 16:9 slideshow
 
 #(set! paper-alist (cons '("1920x1080" . (cons (* 16 in) (* 9 in))) paper-alist))
