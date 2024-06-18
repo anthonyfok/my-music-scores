@@ -96,18 +96,6 @@ sopranoJianpu = \relative c' {
 alto = \relative c' {
   \global
   % Music follows here.
-  c2 c4 | d2 e4 | d4 d8 d d d | e2 e4 |
-  d2 d4 | c4( f) f | f2 e4 | f2. |
-
-  %f4 d8( d) d( d) | e2 c4 | f4 f8( f) d( d) | c2 c4 |
-  f4 d d | e2 c4 | f4 f d | c2 c4 |
-  f4 f f8 f | f4. f8 g a | c,4 f c | c4 a' bes8 a |
-
-  a4 bes c | bes2 g4 | f4. f8 e d | a4 c e, | f4.
-  
-  f'8 f f | f4. f8 f f | f4. f8 e d | a4 c e, | f4 r8
-
-  e8 f g | a4. f8 a d | d4. bes8 d f | a2.~ | a2 r4-\fermata
   \bar "|."
 }
 
@@ -129,7 +117,7 @@ serifSemiBold = \override LyricText.font-name = #"Noto Serif CJK HK SemiBold"
 verse = \lyricmode {
   % Lyrics follow here.
   \serifSemiBold
-  上 \bd 主！ 請 祢 嘘 \bd 氣， 使 大 地 更 \bd 新。
+  上 \bd 主！ 請 祢 噓 \bd 氣， 使 大 地 更 \bd 新。
 }
 
 pianoReduction = \new PianoStaff \with {
