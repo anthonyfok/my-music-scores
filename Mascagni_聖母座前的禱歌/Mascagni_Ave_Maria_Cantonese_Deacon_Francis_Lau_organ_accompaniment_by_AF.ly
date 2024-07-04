@@ -1,4 +1,4 @@
-\version "2.24.0"
+\version "2.24.3"
 
 \include "../definition.ily"
 \include "../mass-slides-mhocp.ily"
@@ -8,7 +8,7 @@ date = #(strftime "%Y-%m-%d" (localtime (current-time)))
 
 \header {
   title = \markup { Ave Maria \notoserifcjkhkbold 聖母座前的禱歌（粵語版） }
-  subtitle = \markup \vspace #1 % change this value accordingly
+  %subtitle = \markup \vspace #1 % change this value accordingly
   
   composer = \markup {
     \notoserifcjkhksemibold 曲：Pietro Mascagni
@@ -18,14 +18,14 @@ date = #(strftime "%Y-%m-%d" (localtime (current-time)))
     \notoserifcjkhksemibold 粵語歌詞：劉贊願 Francis Lau
   }
   %arranger = "詞：Francis Lau 劉贊願執士"
-  copyright = \markup {
+  copyright = \markup \tiny {
     Adapted to the celebrated \italic Intermezzo from \italic { Cavalleria Rusticana }
   }
   
   tagline = \markup {
-    \smaller {
+    \tiny {
 
-      \bold { v0.2 } \date
+      \bold { v0.1 DRAFT } \date
       (af)
       • Edmonton AB
       •
@@ -49,20 +49,19 @@ date = #(strftime "%Y-%m-%d" (localtime (current-time)))
   }
 }
 
-#(set-global-staff-size 22)
-% #(set-global-staff-size 19)
+% #(set-global-staff-size 22)
+#(set-global-staff-size 19)
 
 \paper {
   #(set-paper-size "letter")
-  top-margin = 0.75\in
-  %top-margin = 0.8\in
-  bottom-margin = 0.5\in
-  left-margin = 0.75\in
-  right-margin = 0.75\in
-  markup-system-spacing.padding = #1
-  system-system-spacing.padding = #5
+  top-margin = 0.3\in
+  bottom-margin = 0.3\in
+  left-margin = 0.7\in
+  right-margin = 0.7\in
+  %markup-system-spacing.padding = #1
+  %system-system-spacing.padding = #5
   ragged-bottom = ##f
-  %ragged-last-bottom = ##f
+  ragged-last-bottom = ##f
   
   %print-first-page-number = ##t
 }
@@ -70,12 +69,13 @@ date = #(strftime "%Y-%m-%d" (localtime (current-time)))
 global = {
   \key f \major
   \time 3/4
-  \autoBeamOff
+  % \autoBeamOff
   \tempo "Andante sostenuto" 4 = 56
 }
 
 soprano = \relative c'' {
   \global
+  \autoBeamOff
 
   a2^\f  c4 | f,2 a4^\< | d,4 d'8\! c bes f | a2^\> g4\! | %\break
   bes2 d,4 | a'4( c) f, | a2 g4 | f2. |
@@ -95,6 +95,42 @@ soprano = \relative c'' {
   \bar "|."
 }
 
+alto = \relative c' {
+  \global
+  f2 g4 | d2 e4 | bes4 f' d | e2~4 |
+  d2 bes4 | c2 d4 | f2 e4 | <c a>2. |
+  <f d>2. | e2. | d2. | c2. |
+  a2 d8 f | <f c'>2 <g bes>4 | c,2.~ |
+  4. f4.~ | 4 d' c | bes2 g4 | c,2.~ |
+  4. f4.~ | 4 d' c | bes2 g4 | c,2.~ |
+  4. r8 r4 | f2.~ | 2. |
+  <a c>2.~ | 2.~ | 2. |
+}
+
+tenor = \relative c' {
+  \global
+  c2~4 | a2~4 | f2 bes4 | c2 bes4 |
+  g2. | f2 g4 | c2 bes4 | f2. |
+  bes2 g4 | c2 bes4 | g2. | g2. |
+  f2.~ | f | f4 a bes |
+  a2.~ | 4 g f~ | f2. | f4 a bes |
+  a2.~ | 4 g f~ | f2. | f4 a bes |
+  a4. e8 f g |
+  r8 a d4 c | r8 f, bes4 g | f2.~ | 2. | f'2.
+}
+
+bass = \relative c {
+  \global
+  f2 e4 | d2 c4 | bes2 g'4 | c,2. |
+  r4 g bes | f4 a b | c2. | f,4. g8 a c |
+  bes2 g4 | c2. | g4. a8 bes4 | c g c, |
+  d'4 c bes | a4 a bes | c2. |
+  f4 e d | c bes a | g2 bes4 | c2. |
+  f4 e d | c bes a | g2 bes4 | c2. |
+  f4. r8 r4 |
+  d2 c4 | bes2 g4 | f2.~ | 2. | f'2. |
+}
+
 sopranoJianpu = \relative c'' {
   \global
 
@@ -112,7 +148,7 @@ sopranoJianpu = \relative c'' {
   \bar "|."
 }
 
-alto = \relative c' {
+mysteriousAlto = \relative c' {
   \global
   % Music follows here.
   c2 c4 | d2 e4 | d4 d8 d d d | e2 e4 |
@@ -128,18 +164,6 @@ alto = \relative c' {
 
   e8 f g | a4. f8 a d | d4. bes8 d f | a2.~ | a2 r4-\fermata
   \bar "|."
-}
-
-tenor = \relative c' {
-  \global
-  % Music follows here.
-  
-}
-
-bass = \relative c {
-  \global
-  % Music follows here.
-  
 }
 
 bd = \once \override LyricText.self-alignment-X = #-0.7
@@ -220,38 +244,43 @@ rehearsalMidi = #
  #})
 
 \score {
-  <<
-%    \new ChoirStaff <<
+  \new PianoStaff <<
       
+      %{
       \new JianpuStaff {
         \set Staff.midiMaximumVolume = #0
         \jianpuMusic {
-          \transpose f d { \sopranoJianpu }
+          \transpose f f { \sopranoJianpu }
         }
       }
+      %}
 
       \new Staff \with {
         midiInstrument = "choir aahs"
         %instrumentName = \markup \center-column { "Soprano" "Alto" }
-      } <<
-        \new Voice = "soprano" { \transpose f d { \soprano } }
-        %\new Voice = "soprano" { \voiceOne \soprano }
-        %\new Voice = "alto" { \voiceTwo \alto }
+      }
+        \transpose f d
+      <<
+        %\new Voice = "soprano" { \transpose f f { \soprano } }
+        \new Voice = "soprano" { \voiceOne \soprano }
+        \new Voice = "alto" { \voiceTwo \alto }
       >>
+      
       \new Lyrics \with {
         \override VerticalAxisGroup.staff-affinity = #CENTER
       } \lyricsto "soprano" \verse
+      
       \new Staff \with {
         midiInstrument = "choir aahs"
-        instrumentName = \markup \center-column { "Tenor" "Bass" }
-      } <<
+        % instrumentName = \markup \center-column { "Tenor" "Bass" }
+      } \transpose f d
+      <<
         \clef bass
         \new Voice = "tenor" { \voiceOne \tenor }
         \new Voice = "bass" { \voiceTwo \bass }
       >>
- %   >>
+    >>
     % \pianoReduction
-  >>
   
   \layout {
     indent = #0
@@ -264,8 +293,8 @@ rehearsalMidi = #
       \Staff
       \consists #merge-rests-engraver
       \consists #merge-mmrests-engraver
-      \RemoveEmptyStaves
-      \override VerticalAxisGroup.remove-first = ##t
+      %\RemoveEmptyStaves
+      %\override VerticalAxisGroup.remove-first = ##t
     }
     \context {
       \JianpuStaff
@@ -278,38 +307,5 @@ rehearsalMidi = #
   }
   \midi {
     \tempo 4=100
-  }
-}
-
-% Rehearsal MIDI files:
-\book {
-  \bookOutputSuffix "soprano"
-  \score {
-    \rehearsalMidi "soprano" "soprano sax" \verse
-    \midi { }
-  }
-}
-
-\book {
-  \bookOutputSuffix "alto"
-  \score {
-    \rehearsalMidi "alto" "soprano sax" \verse
-    \midi { }
-  }
-}
-
-\book {
-  \bookOutputSuffix "tenor"
-  \score {
-    \rehearsalMidi "tenor" "tenor sax" \verse
-    \midi { }
-  }
-}
-
-\book {
-  \bookOutputSuffix "bass"
-  \score {
-    \rehearsalMidi "bass" "tenor sax" \verse
-    \midi { }
   }
 }
