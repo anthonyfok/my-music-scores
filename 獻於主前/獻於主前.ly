@@ -3,8 +3,10 @@
 % 伴奏：霍東靈
 % Anthony Fok <anthony@anthonyfok.org>, anthony.fok@mhocp.ca
 % 2025-12-26 to 2025-12-27 in Edmonton, Alberta, Canada
+% 2026-02-11 Revised copyright message
 
 \version "2.24.0"
+\pointAndClickOff
 \include "../definition.ily"
 \include "../mass-slides-mhocp.ily"
 \include "../jianpu10a.ly"
@@ -27,25 +29,25 @@
       \line {
         \smaller
         \override #'(font-name . "Noto Serif CJK TC SemiBold") {
-          "詞：佚名？(待查證)　曲：佚名？(待查證)　編：霍東靈 (2025月12月27日於愛民頓)"
+          "詞：佚名　　曲：佚名　　伴奏：霍東靈 試編"
+          \smaller\smaller "(2025月12月27日於加拿大愛民頓市)"
         }
       }
+      \vspace #0.5
       \line {
         { 
-          \smaller\smaller
-          \override #'(font-name . "Noto Serif CJK TC SemiBold") {
-            "參考 Vincent Chung 弟兄 2024年6月2日的彈奏示範"
-            \with-url #"https://www.instagram.com/reel/C7tuJA2vSst" {
-              https://www.instagram.com/reel/C7tuJA2vSst
+          \smaller {
+            \concat {
+              \override #'(font-name . "Noto Serif CJK TC SemiBold") {
+                "鳴謝：天主教香港教區沙田聖本篤堂聖詠團慷慨授權我們於"
+              }
+              \override #'(font-name . "Noto Sans CJK TC Bold") {
+                "禮儀中"
+              }
+              \override #'(font-name . "Noto Serif CJK TC SemiBold") {
+                "使用此聖歌。"
+              }
             }
-          }
-        }
-      }
-      \line {
-        { 
-          \smaller\smaller
-          \override #'(font-name . "Noto Serif CJK TC SemiBold") {
-            "以及劉贊願執事提供的天主教香港教區沙田聖本篤堂主日感恩祭信友禱文回應的現場錄像，萬分感謝！"
           }
         }
       }
