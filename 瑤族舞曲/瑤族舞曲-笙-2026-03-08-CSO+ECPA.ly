@@ -1,11 +1,35 @@
 \version "2.24"
 
 \header {
-  title = "瑤族舞曲"
-  instrument = "高音笙、中音笙"
-  composer = "劉鐵山、茅沅 曲"
-  arranger = "彭修文 編配"
+  title = \markup {
+    \override #'(font-name . "Noto Serif HK SemiBold")
+    "瑤族舞曲"
+  }
+  instrument = \markup {
+    \override #'(font-name . "Noto Serif HK SemiBold")
+    "高音笙、中音笙"
+  }
+  composer = \markup {
+    \override #'(font-name . "Noto Serif HK SemiBold")
+    "劉鐵山、茅沅 曲"
+  }
+  arranger = \markup {
+    \override #'(font-name . "Noto Serif HK SemiBold")
+    "彭修文 編配"
+  }
+  tagline = ##f
 }
+
+\paper {
+  #(set-paper-size "letter")
+  top-margin = 0.5\in
+  left-margin = 0.5\in
+  right-margin = 0.5\in
+  bottom-margin = 0.5\in
+  %page-breaking = #ly:minimal-breaking
+}
+
+#(set-global-staff-size 21)
 
 global = {
   % Prevent bar numbers at the end of a line and permit them elsewhere
@@ -98,7 +122,10 @@ sopranoSheng = \relative c' {
   
   \set Score.currentBarNumber = #131 % Should be 130, but hand-written score says 131
   \repeat volta 2 {
-    a4-!^\markup { 第一次 \dynamic f 第二次 \dynamic mp } <c e>8.-! <a d>16-! <c e>4-! | a4-! <c e>8.-! <a d>16-! <c e>4-! |
+    a4-!^\markup {
+      \override #'(font-name . "Noto Serif HK SemiBold") 第一次 \dynamic f
+      \override #'(font-name . "Noto Serif HK SemiBold") 第二次 \dynamic mp
+    } <c e>8.-! <a d>16-! <c e>4-! | a4-! <c e>8.-! <a d>16-! <c e>4-! |
     <a d>8.-! <c e>16-! <a d>8-! <g c>-! <e a>-! <d g>-! | <e a>2. |
     <a d>8.-! <c e>16-! <a d>8-! <g c>-! <e a>-! <d g>-! | <c e>2. |
     <a' d>8.-! <c e>16-! <a d>8-! <g c>-! <e a>-! <d g>-! |
@@ -158,7 +185,7 @@ sopranoSheng = \relative c' {
   <es g c>16 <es g c> <es g c> <es g c> <es g c>8 <es g c> |
   R2 |
   r8 <es g c>4-> <es g c>8 |
-  <es g bes>8 <es g bes> <es g bes>16 <es g bes> <es g bes> <es g bes> |
+  <es g bes>8 <es g bes> <es g bes> <es g bes>16 <es g bes> |
   <es g c>8 <es g c> <es g c> <es g c> |
   R2
   r8 <es g c>4 <es g c>8 |
@@ -170,7 +197,10 @@ sopranoSheng = \relative c' {
   <c es f>8 <c es f> <c es f> <c es f> |
   <c es f>8 <c es f> <c es f> <c es f> |
   <c es f>8 <c es f> <c es f> <c es f> |
-  <as c f>2 ~ | <as c f> ~ | <as c f> ~ | <as c f> |
+  <<
+    { <as c f>2 ~ | <as c f> ~ | <as c f> ~ | <as c f> | } \\
+    { c,4 f | es f | g f | es f | }
+  >>
   <bes es g>8 r r4 |
   R2 |
   <es, g c>8->\f r r4 |
@@ -188,7 +218,7 @@ sopranoSheng = \relative c' {
   <g bes c es>2 |
   <f g bes d>2\fp\<^\markup { \hspace #3.5 \fermata } |
   <es g bes c>2\ff\fermata |
-  <es g bes c>8 r r4 |
+  <es g bes c>8-> r r4 |
   \bar "|."
 }
 
@@ -353,7 +383,7 @@ altoSheng = \relative c' {
   <g bes c es>2 |
   <f g bes d>2\fp\<^\markup { \hspace #3.5 \fermata } |
   <c es g c>2\ff\fermata |
-  <c es g c>8 r r4 |
+  <c es g c>8-> r r4 |
   \bar "|."
 }
 
@@ -368,11 +398,24 @@ altoShengPart = \new Staff \with {
 } \altoSheng
 
 \score {
+  \partCombine
+    { \sopranoSheng }
+    { \altoSheng }
+  %{
   <<
-    \sopranoShengPart
-    \altoShengPart
+    { \sopranoShengPart }
+    { \altoShengPart }
   >>
+  %}
   \layout { }
+}
+
+\score {
+  <<
+    { \unfoldRepeats \sopranoShengPart }
+    { \unfoldRepeats \altoShengPart }
+  >>
+
   \midi {
     \context {
       \Score
