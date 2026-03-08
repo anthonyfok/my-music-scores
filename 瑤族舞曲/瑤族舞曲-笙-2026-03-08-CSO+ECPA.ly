@@ -4,10 +4,17 @@
   title = \markup {
     \override #'(font-name . "Noto Serif HK SemiBold")
     "瑤族舞曲"
+    \smaller { Dance of the Yao Tribe }
+  }
+  subtitle = \markup {
+    \normal-text { Revised for }
+    \italic { A Chinese Love Story }
+    \normal-text { CSO+ECPA Concert on 2026-03-08 }
   }
   instrument = \markup {
     \override #'(font-name . "Noto Serif HK SemiBold")
-    "高音笙、中音笙"
+    "高音笙"
+    \normal-text { Soprano Sheng }
   }
   composer = \markup {
     \override #'(font-name . "Noto Serif HK SemiBold")
@@ -27,6 +34,7 @@
   right-margin = 0.5\in
   bottom-margin = 0.5\in
   %page-breaking = #ly:minimal-breaking
+  indent = 0
 }
 
 #(set-global-staff-size 21)
@@ -222,6 +230,196 @@ sopranoSheng = \relative c' {
   \bar "|."
 }
 
+oneSheng = \relative c' {
+  \global
+  \set Score.skipBars = ##t
+  R2*8 |
+  \repeat volta 2 {
+    R2*8 |
+  }
+  R2*7 |
+  \showBarNumberOnce % Bar 24
+  r8\mf\< <f f'>( <g g'> <bes bes'>) |
+  \repeat volta 2 {
+    c8\((\f g') g( c,) | f4. es8\) | d8\( f es d | c8.\> bes16 g4\!\) |
+    c8.\(\< d16 es8 f\! | g8. bes16 g8 f | es8 f16 g f8 es | c4.\>\) r8\! |
+    
+    <es, bes'>8\mf <es bes'>16(\cresc <f c'> <bes es>8 <g c>) |
+    <bes es>8 <bes es>16( <c f> <es g>8 <f bes>) |
+    <es g>8 <es g>16( <f bes>) <c f>8 <es g>16( <f bes>) |
+    <es g>4.\< r8\! |
+    
+    <es, g c>2\f | <f bes c>2 |
+    <<
+      {{ <g bes>2^\markup { \italic "2nd time rit." } }} \\
+      {{ <es es'>4( <d d'>8) <bes bes'> }}
+    >> |
+    <c es g c>4. r8 |
+  }
+
+  \set Score.currentBarNumber = #57
+  \showBarNumberOnce % Bar 57
+  \tempo "Allegro non troppo"
+  c8-!\mf g'-! f16-! g-! f-! es-! | c8-! es-! c-! g-! |
+  c8-! g'-! f16-! g-! f-! es-! | c8-! es-! c-! g-! |
+  c8-! c16-! es-! f8-! f16-! es-! | f8-! bes-! g4-! |
+  f8-! g16-! f-! es8-! f16-! es-! | c4. r8 |
+  
+  <c' es f>2\mf ~ | <c es f> | <g bes c>2 ~ | <g bes c> |
+  <c es f>2 ~ | <c es f> | <g bes c>2 ~ | <g bes c>4. r8 |
+  
+  c2\mf( ~ | c4 g8 bes) | c2( ~ | c4 g8 bes) |
+  c8( c bes c | es f g4 | f4 es8 d | c4) <c es g>8\ff r |
+  
+  \repeat volta 2 {
+    <c es g>8 <c es g> <c es g>16 <c es g> <c es g> <c es g> |
+    <c es g>8 <c es g> <c es g> <c es g> |
+    <c es g>8 <c es g> <c es g>16 <c es g> <c es g> <c es g> |
+    <c es g>8 <c es g> <c es g> <c es g> |
+    
+    <bes es g>8 <bes es g>16 <bes es g>  <bes es g>8 <bes es g>16 <bes es g> |
+    <bes es g>8 <bes es g> <c es g>4 |
+    <as c f>8 <as c f>16 <as c f>  <g c es>8 <g c es>16 <g c es> |
+    \alternative {
+      \volta 1 {
+        r8 <es g c> <es g c> r |
+        <f c' es>2\mf ~ <f c' es>\f | <c g' bes>2\mf ~ <c g' bes>\f |
+        <f c' es>2\mf ~ <f c' es>\f | <c g' bes>2\mf ~ <c g' bes>\f |
+      }
+      \volta 2 {
+        \set Score.currentBarNumber = #104
+        r8 <es g c> <es g c> r |
+      }
+    }
+  }
+  R2*8 |
+  <c e g c>2\fermata-\tweak X-offset #-3 \mf\> |
+  \bar "||"
+  
+  \key c \major
+  \time 3/4
+  
+  \showBarNumberOnce
+  <c' e>4\! <c e>2 | <a c>4 <a c>2 | <g c>4 <c e>2 | <c e>8 <c e> <g c>2 |
+  a4\< c c | e4\mf a,8( e' a, e') | d4. c8(\> d[ c]) | a2.\mp |
+  
+  \repeat volta 2 {
+    R2.*8^\markup { \hspace #10 \italic rit. } |
+  }
+  
+  \set Score.currentBarNumber = #131 % Should be 130, but hand-written score says 131
+  \repeat volta 2 {
+    a4-!^\markup {
+      \override #'(font-name . "Noto Serif HK SemiBold") "第一次" \dynamic f
+      \override #'(font-name . "Noto Serif HK SemiBold") " 第二次" \dynamic mp
+    } <c e>8.-! <a d>16-! <c e>4-! | a4-! <c e>8.-! <a d>16-! <c e>4-! |
+    <a d>8.-! <c e>16-! <a d>8-! <g c>-! <e a>-! <d g>-! | <e a>2. |
+    <a d>8.-! <c e>16-! <a d>8-! <g c>-! <e a>-! <d g>-! | <c e>2. |
+    <a' d>8.-! <c e>16-! <a d>8-! <g c>-! <e a>-! <d g>-! |
+    \showBarNumberOnce
+    <c c'>2. |
+  }
+  
+  % 中音笙
+  <e e'>4 <e e'>2 | <c c'>4 <c c'>2 | <c c'>4 <e e'>2 | <e e'>4 <c c'>2 |
+  <<
+    { <a a'>4( <c c'>-- <c c'>-- | <e e'>2. | <d d'>2 <c c'>4 | <a a'>2.) | }
+    { s2\< s8.. s32\mf\> | s2. | s2.\! | s2. | }
+  >>
+  
+  R2.*8 |
+  <g' c e>2.\f | <g a d>2. |<e a c>2. | <g b d>2.\< |
+  <a e'>4\! <g e'> <a e'> | <g c>4 <g b> <a c> | <a c d>2 <e a c>4 | <c e g c>2.\ff |
+  R2.*4^\markup { \hspace #10 \fermata } |
+  \bar "||"
+  
+  \key c \minor
+  \time 2/4
+  
+  c8( g') g( c,) | f4. es8 | d8\( f es d | c8. bes16 g4\) |
+  c8.\( d16 es8 f | g8. bes16 g8 f | es8 f16 g f8 es | c4.\) r8 |
+  
+  <es bes'>8 <es bes'>16( <f c'> <bes es>8 <g c>) |
+  <bes es>8 <bes es>16( <c f> <es g>8 <f bes>) |
+  <es g>8 <es g>16( <f bes>) <c f>8 <es g>16( <f bes>) |
+  <es g>4.\< r8\! |
+  
+  <es, g c>2\f | <f bes c>2 |
+  <<
+    {{ <g bes>2 }} \\
+    {{ <es es'>4( <d d'>8) <bes bes'> }}
+  >> |
+  <es g c>4. r8\fermata
+  \bar "||"
+  
+  \showBarNumberOnce
+  \tempo "Allegro con brio"
+  c'2 ~ | c4 g8( bes) | c2 ~ | c4 g8( bes) |
+  c8 c( bes c | es f g4) | f4( es8 d | c4) <c es g>8\ff r |
+
+  \repeat volta 2 {
+    <c es g>8\f <c es g> <c es g>16 <c es g> <c es g> <c es g> |
+    <c es g>8 <c es g> <c es g> <c es g> |
+    <c es g>8 <c es g> <c es g>16 <c es g> <c es g> <c es g> |
+    <c es g>8 <c es g> <c es g> <c es g> |
+    
+    <bes es g>8-> <bes es g>16 <bes es g>  <bes es g>8 <bes es g>16 <bes es g> |
+    <bes es g>8 <bes es g> <c es g>4 |
+    \alternative {
+      \volta 1 {
+        <as c f>8 <as c f>16 <as c f>  <g c es>8 <g c es>16 <g c es> |
+        r8 <es g c> <es g c> r |
+        <es f c' es>2\mf ~ <es f c' es>\f | <c g' bes>2\mf ~ <c g' bes>\f |
+        <es f c' es>2\mf ~ <es f c' es>\f | <c g' bes>2\mf ~ <c g' bes>\f |
+      }
+      \volta 2 {
+        \set Score.currentBarNumber = #213
+        \showBarNumberOnce
+        <as' c f>8 <as c f>16 <as c f>  <g c es>8 <g c es>16 <g c es> |
+        <es g c>8 <es g c> <es g c> <es g c> |
+      }
+    }
+  }
+  <es g c>16 <es g c> <es g c> <es g c> <es g c>8 <es g c> |
+  R2 |
+  r8 <es g c>4-> <es g c>8 |
+  <es g bes>8 <es g bes> <es g bes> <es g bes>16 <es g bes> |
+  <es g c>8 <es g c> <es g c> <es g c> |
+  R2
+  r8 <es g c>4 <es g c>8 |
+  <c es f>8\mp <c es f> <c es f> <c es f> |
+  <c es f>8 <c es f> <c es f> <c es f> |
+  <c es f>8\< <c es f> <c es f> <c es f> |
+  <c es f>8 <c es f> <c es f> <c es f> |
+  <c' es f>8\f <c es f> <c es f> <c es f> |
+  <c es f>8 <c es f> <c es f> <c es f> |
+  <c es f>8 <c es f> <c es f> <c es f> |
+  <c es f>8 <c es f> <c es f> <c es f> |
+  <<
+    \magnifyMusic 0.63 { <as c f>2 ~ | <as c f> ~ | <as c f> ~ | <as c f> | } \\
+    { c,4 f | es f | g f | es f | }
+  >>
+  <g bes es g>8 r r4 |
+  R2 |
+  <es g c>8->\f r r4 |
+  <es g c>8-> r r4 |
+  <es g c>8-> r r4 |
+  <es g c>8-> r r4 |
+  <es g c>8 r <es g c>8 r |
+  <es g c>8 r <es g c>8 r |
+  <es g c>8\f r <es g c>8 r |
+  <es g c>8 r <es g c>8 r |
+  <es g c>8 <es g c>4 <es g c>8 |
+  <es g c>4^\markup { \italic rit. } <es g c> |
+  <es g c>2->\ff |
+  <f as c>2-> |
+  <g bes c es>2 |
+  <f g bes d>2-\tweak X-offset #-2.5 \fp\<^\markup { \hspace #4 \fermata } |
+  <c es g bes c>2\ff\fermata |
+  <c es g bes c>8-> r r4 |
+  \bar "|."
+}
+
 altoSheng = \relative c' {
   \global
   % Music follows here.
@@ -392,15 +590,23 @@ sopranoShengPart = \new Staff \with {
   midiInstrument = "oboe"
 } \sopranoSheng
 
+oneShengPart = \new Staff \with {
+  %instrumentName = \markup { \override #'(font-name . "Noto Serif HK SemiBold") 高音笙 }
+  midiInstrument = "oboe"
+} \oneSheng
+
 altoShengPart = \new Staff \with {
   instrumentName = "中音笙"
   midiInstrument = "flute"
 } \altoSheng
 
 \score {
+  %{
   \partCombine
     { \sopranoSheng }
     { \altoSheng }
+  %}
+  \oneShengPart
   %{
   <<
     { \sopranoShengPart }
@@ -411,10 +617,13 @@ altoShengPart = \new Staff \with {
 }
 
 \score {
+  %{
   <<
     { \unfoldRepeats \sopranoShengPart }
     { \unfoldRepeats \altoShengPart }
   >>
+  %}
+  \unfoldRepeats \oneShengPart
 
   \midi {
     \context {
