@@ -1,10 +1,13 @@
 % Litany of the Saints for Easter Vigil 2026 at Mary Help of Christians (Chinese) Catholic Parish
 %
-% Engraved with help from GPT-5.3-Codex through GitHub Copilot on 2026-03-23
-% with final revisions by Anthony Fok <anthony@anthonyfok.org> on 2026-03-25
+% 2026-03-23: Engraved with help from GPT-5.3-Codex through GitHub Copilot
+% 2026-03-25: Final revisions by Anthony Fok <anthony@anthonyfok.org>
+% 2026-03-28: Add \pointAndClickOff
 % Edmonton, AB, Canada
 
 \version "2.24.2"
+
+\pointAndClickOff
 
 \header {
   title = "諸聖禱文"
@@ -138,7 +141,7 @@ angelMichaelText = \lyricmode {
 }
 
 angelRaphaelText = \lyricmode {
-  \rt 聖 彌 額 \bd 爾，
+  \rt 聖 辣 法 \bd 耳，
   \saintsResponseText
 }
 
@@ -176,9 +179,7 @@ stAndrewStJohnText = \lyricmode {
 }
 
 stMaryMagdaleneText = \lyricmode {
-  % FIXME
-  %\rt 聖女瑪 達 肋 \bd 納，
-  \rt 聖女瑪利亞瑪 達 肋 \bd 納，
+  \rt 聖瑪利亞瑪 達 肋 \bd 納，
   \saintsResponseText
 }
 
@@ -263,7 +264,7 @@ stMartinText = \lyricmode {
 }
 
 stPatrickText = \lyricmode {
-  _ Saint Pa -- trick,
+  _ Saint Pat -- rick,
   % 聖 博 \bd 德，
   % St. Patrick, (c. 460 or c. 493) ^^2026^^
   \saintsResponseText
