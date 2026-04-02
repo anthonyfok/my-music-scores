@@ -2,15 +2,20 @@
 % Litany of the Saints (Short Form) for Easter Vigil 2026 at Mary Help of Christians (Chinese) Catholic Parish
 %
 % 2026-03-23: Engraved with help from GPT-5.3-Codex through GitHub Copilot
-% 2026-03-25: Final revisions by Anthony Fok <anthony@anthonyfok.org>
+% 2026-03-25: Final revisions?
 % 2026-03-28: Add \pointAndClickOff
 % 2026-04-01: Add missing 耶穌！生活天主之子
 %             Remove some saints and petitions for this Short Form
-% Edmonton, AB, Canada
+% 2026-04-02: Add Jianpu
+%             Change translation of St. Pier Giorgio Frassati to 聖傅喬治·傅拉薩提
+% 
+% Engraved by Anthony Fok <anthony@anthonyfok.org>. Edmonton, AB, Canada
 
 \version "2.24.2"
 
 \pointAndClickOff
+
+\include "jianpu10a-afok.ly"
 
 \header {
   title = "諸聖禱文"
@@ -24,17 +29,18 @@
 
 \paper {
   #(set-paper-size "letter")
-  top-margin = 0.6\in
+  top-margin = 0.4\in
   bottom-margin = 0.4\in
   left-margin = 0.75\in
   right-margin = 0.75\in
   indent = 0
-%  markup-system-spacing.padding = #3
-  % system-system-spacing.padding = #2
+  %  markup-system-spacing.padding = #3
+  markup-system-spacing.padding = #0
+  system-system-spacing.padding = #0
   %score-system-spacing.basic-distance = #35
   ragged-right = ##f
   %ragged-bottom = ##f
-  ragged-last-bottom = ##t
+  %ragged-last-bottom = ##t
 
   oddFooterMarkup = \markup {
     \unless \on-first-page {
@@ -58,10 +64,10 @@
   %property-defaults.fonts.serif = "Noto Serif HK SemiBold"
   myStaffSize = #20
   #(define fonts
-    (make-pango-font-tree "Noto Serif HK SemiBold"
-                          "LilyPond Sans Serif"
-                          "LilyPond Monospace"
-     (/ myStaffSize 20)))
+     (make-pango-font-tree "Noto Serif HK SemiBold"
+                           "LilyPond Sans Serif"
+                           "LilyPond Monospace"
+                           (/ myStaffSize 20)))
 }
 
 global = {
@@ -90,13 +96,16 @@ kyrieMelody = \relative c'' {
 
 saintsMelody = \relative c'' {
   \global
-  b\breve a8[ b] d[ cis] b4 \bar "|"
+  %b\breve a8[ b] d[ cis] b4 \bar "|"
+  %\tweak style #'breve
+  b1
+  a8[ b] d[ cis] b4 \bar "|"
   b8 b a8 fis a8[ b] b4 \bar "||"
 }
 
-versiculus = \lyricmode { \set stanza = #"（領）" }
-responsum = \lyricmode { \set stanza = #"（眾）" }
-singInMandarin = \lyricmode { \set stanza = #"（國語）" }
+versiculus = \lyricmode { \set stanza = \markup { \with-color "red" "（領）" } }
+responsum = \lyricmode { \set stanza = \markup { \with-color "red" "（眾）" } }
+singInMandarin = \lyricmode { \set stanza = \markup { \with-color "red" "（國語）" } }
 
 kyrieText = \lyricmode {
   \versiculus
@@ -395,7 +404,9 @@ stThereseLisieuxText = \lyricmode {
 
 stPierGiorgioFrassatiText = \lyricmode {
   \versiculus
-  \rt "聖伯鐸·喬治 ·" 梵 薩 \bd 蒂，
+  %\rt "聖伯鐸·喬治 ·" 梵 薩 \bd 蒂，
+  % Chinese translation from https://www.facebook.com/reel/800534115985835
+  \rt "聖傅喬治 · 傅" 拉 薩 \bd 提，
   % St. Pier Giorgio Frassati (1925) ^^2026^^
   \responsum
   \saintsResponseText
@@ -422,7 +433,9 @@ allHolyMenWomenText = \lyricmode {
 
 saveUsMelody = \relative c'' {
   \global
-  a\breve b4 fis \bar "|"
+  % a\breve
+  a1
+  b4 fis \bar "|"
   a8 b a fis e4 fis \bar "||"
 }
 
@@ -463,7 +476,9 @@ saveUsTextG = \lyricmode {
 
 hearUsMelody = \relative c'' {
   \global
-  a\breve fis8[ a] b4 fis \bar "|"
+  % a\breve
+  a1
+  fis8[ a] b4 fis \bar "|"
   a8 b a fis e4 fis \bar "||"
 }
 
@@ -536,12 +551,35 @@ closingText = \lyricmode {
     %\override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = #2
     %\override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing.padding = #2
   }
+  \context {
+    \Staff
+    \override VerticalAxisGroup.staff-padding = #1
+  }
 }
 
-spaceBetweenScores = \markup { \vspace #0.5 }
+spaceBetweenScores = \markup { \vspace #0.0 }
+%spaceBetweenScores = \markup {}
+
+jianpuStaff = #(define-music-function (melody) (ly:music?)
+                 #{
+                   \new JianpuStaff \with {
+                     \override VerticalAxisGroup.default-staff-staff-spacing =
+                     #'((basic-distance . 0)
+                        (minimum-distance . 0)
+                        (padding . 0.4))
+                     fontSize = #-2
+                     \override StaffSymbol.staff-space = #(magstep -1.7)
+                     %\override Flag.staff-space = #(magstep -2)
+                     %\override Flag.color = red
+                     %\flagStyleStacked
+                   } {
+                     \jianpuMusic { $melody }
+                   }
+                 #})
 
 \score {
   <<
+    \jianpuStaff { \kyrieMelody }
     \new Staff \with {
       % instrumentName = "領/眾"
     } {
@@ -555,11 +593,12 @@ spaceBetweenScores = \markup { \vspace #0.5 }
 
 \score {
   <<
+    \jianpuStaff { \saintsMelody }
     \new Staff \with {
       % instrumentName = "領/眾"
     } {
       \new Voice = "ourlady" {
-        \textMark "聖母瑪利亞 Our Lady"
+        \textMark \markup { \small \with-color "teal" "聖母瑪利亞 Our Lady" }
         \saintsMelody
       }
     }
@@ -572,9 +611,10 @@ spaceBetweenScores = \markup { \vspace #0.5 }
 
 \score {
   <<
+    \jianpuStaff { \saintsMelody }
     \new Staff {
       \new Voice = "angels" {
-        \textMark "天使 Angels"
+        \textMark \markup { \small \with-color "teal" "天使 Angels" }
         \saintsMelody
       }
     }
@@ -588,9 +628,10 @@ spaceBetweenScores = \markup { \vspace #0.5 }
 
 \score {
   <<
+    \jianpuStaff { \saintsMelody }
     \new Staff {
       \new Voice = "patriarchsProphets" {
-        \textMark "聖祖及先知 Patriarchs and Prophets"
+        \textMark \markup { \small \with-color "teal" "聖祖及先知 Patriarchs and Prophets" }
         \saintsMelody
       }
     }
@@ -603,9 +644,10 @@ spaceBetweenScores = \markup { \vspace #0.5 }
 
 \score {
   <<
+    \jianpuStaff { \saintsMelody }
     \new Staff {
       \new Voice = "apostles" {
-        \textMark "宗徒及聖徒 Apostles and Disciples of the Lord"
+        \textMark \markup { \small \with-color "teal" "宗徒及聖徒 Apostles and Disciples of the Lord" }
         \saintsMelody
       }
     }
@@ -615,13 +657,14 @@ spaceBetweenScores = \markup { \vspace #0.5 }
   >>
 }
 
-\spaceBetweenScores
+%\spaceBetweenScores
 
 \score {
   <<
+    \jianpuStaff { \saintsMelody }
     \new Staff {
       \new Voice = "martyrs" {
-        \textMark "殉道聖人 Martyrs"
+        \textMark \markup { \small \with-color "teal" "殉道聖人 Martyrs" }
         \saintsMelody
       }
     }
@@ -641,9 +684,10 @@ spaceBetweenScores = \markup { \vspace #0.5 }
 
 \score {
   <<
+    \jianpuStaff { \saintsMelody }
     \new Staff {
       \new Voice = "bishops" {
-        \textMark "主教及聖師 Bishops and Doctors of the Church"
+        \textMark \markup { \small \with-color "teal" "主教及聖師 Bishops and Doctors of the Church" }
         \saintsMelody
       }
     }
@@ -663,9 +707,10 @@ spaceBetweenScores = \markup { \vspace #0.5 }
 
 \score {
   <<
+    \jianpuStaff { \saintsMelody }
     \new Staff {
       \new Voice = "priestsReligious" {
-        \textMark "司鐸及修道聖人 Priests and Religious"
+        \textMark \markup { \small \with-color "teal" "司鐸及修道聖人 Priests and Religious" }
         \saintsMelody
       }
     }
@@ -690,9 +735,10 @@ spaceBetweenScores = \markup { \vspace #0.5 }
 
 \score {
   <<
+    \jianpuStaff { \saintsMelody }
     \new Staff {
       \new Voice = "laity" {
-        \textMark "平信徒 Laity"
+        \textMark \markup { \small \with-color "teal" "平信徒 Laity" }
         \saintsMelody
       }
     }
@@ -707,6 +753,7 @@ spaceBetweenScores = \markup { \vspace #0.5 }
 
 \score {
   <<
+    \jianpuStaff { \saveUsMelody }
     \new Staff {
       \new Voice = "saveus" { \saveUsMelody }
     }
@@ -724,6 +771,7 @@ spaceBetweenScores = \markup { \vspace #0.5 }
 
 \score {
   <<
+    \jianpuStaff { \hearUsMelody }
     \new Staff {
       \new Voice = "hearus" { \hearUsMelody }
     }
@@ -742,9 +790,12 @@ spaceBetweenScores = \markup { \vspace #0.5 }
 
 \score {
   <<
+    \jianpuStaff { \closingMelody }
     \new Staff {
       \new Voice = "closing" { \closingMelody }
     }
     \new Lyrics \lyricsto "closing" { \closingText }
   >>
 }
+
+\spaceBetweenScores
