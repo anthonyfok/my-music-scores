@@ -1,8 +1,11 @@
-% Litany of the Saints for Easter Vigil 2026 at Mary Help of Christians (Chinese) Catholic Parish
+% 諸聖禱文_MHoCP_2026_短式.ly
+% Litany of the Saints (Short Form) for Easter Vigil 2026 at Mary Help of Christians (Chinese) Catholic Parish
 %
 % 2026-03-23: Engraved with help from GPT-5.3-Codex through GitHub Copilot
 % 2026-03-25: Final revisions by Anthony Fok <anthony@anthonyfok.org>
 % 2026-03-28: Add \pointAndClickOff
+% 2026-04-01: Add missing 耶穌！生活天主之子
+%             Remove some saints and petitions for this Short Form
 % Edmonton, AB, Canada
 
 \version "2.24.2"
@@ -12,7 +15,7 @@
 \header {
   title = "諸聖禱文"
   subtitle = "瑪利亞進教之佑堂華人天主堂 2026 年至聖之夜逾越節守夜禮專用"
-  subsubtitle = "已加18位候洗者主保聖名"
+  subsubtitle = "已加 18 位候洗者主保聖名（短式，約 6 分 55 秒）"
   composer = "李振邦 (1923–1984)"
   tagline = ##f
 }
@@ -38,7 +41,7 @@
       \fill-line {
         % \on-the-fly #print-page-number-check-first
         % \fromproperty #'page:page-number-string % Page number
-        "瑪利亞進教之佑堂華人天主堂 2026 年至聖之夜逾越節守夜禮專用《諸聖禱文》" % Custom text or copyright
+        "瑪利亞進教之佑堂華人天主堂 2026 年至聖之夜逾越節守夜禮專用《諸聖禱文》（短式）" % Custom text or copyright
       }
     }
   }
@@ -46,7 +49,7 @@
     \fill-line {
       % \on-the-fly #print-page-number-check-first
       % \fromproperty #'page:page-number-string % Page number
-      "瑪利亞進教之佑堂華人天主堂 2026 年至聖之夜逾越節守夜禮專用《諸聖禱文》" % Custom text or copyright
+      "瑪利亞進教之佑堂華人天主堂 2026 年至聖之夜逾越節守夜禮專用《諸聖禱文》（短式）" % Custom text or copyright
     }
   }
 
@@ -498,6 +501,10 @@ hearUsTextG = \lyricmode {
   \rt 求主藉聖洗聖事賜給這些特選者再生 的 恩 \bd 寵，
   \hearUsResponseText
 }
+hearUsTextH = \lyricmode {
+  \rt 耶穌！生活天 主 之 \bd 子，
+  \hearUsResponseText
+}
 
 closingMelody = \relative c'' {
   \global
@@ -646,8 +653,8 @@ spaceBetweenScores = \markup { \vspace #0.5 }
     \new Lyrics \lyricsto "bishops" { \stPatrickText }
     \new Lyrics \lyricsto "bishops" { \stAidanText }
     \new Lyrics \lyricsto "bishops" { \stEugeneText }
-    \new Lyrics \lyricsto "bishops" { \stFrançoisLavalText }
-    \new Lyrics \lyricsto "bishops" { \stPopeJohnXXIIIText }
+    % \new Lyrics \lyricsto "bishops" { \stFrançoisLavalText }
+    % \new Lyrics \lyricsto "bishops" { \stPopeJohnXXIIIText }
     \new Lyrics \lyricsto "bishops" { \stPopeJohnPaulIIText }
   >>
 }
@@ -666,15 +673,15 @@ spaceBetweenScores = \markup { \vspace #0.5 }
     \new Lyrics \lyricsto "priestsReligious" { \stFrancisStDominicText }
     \new Lyrics \lyricsto "priestsReligious" { \stFrancisXavierText }
     \new Lyrics \lyricsto "priestsReligious" { \stJohnVianneyText }
-    \new Lyrics \lyricsto "priestsReligious" { \stBrotherAndréText }
+    % \new Lyrics \lyricsto "priestsReligious" { \stBrotherAndréText }
     \new Lyrics \lyricsto "priestsReligious" { \stGenevièveText }
     \new Lyrics \lyricsto "priestsReligious" { \stHildegardBingenText }
     \new Lyrics \lyricsto "priestsReligious" { \stClareText }
     \new Lyrics \lyricsto "priestsReligious" { \stCatherineSienaText }
     \new Lyrics \lyricsto "priestsReligious" { \stTeresaJesusText }
-    \new Lyrics \lyricsto "priestsReligious" { \stMarieIncarnationText }
-    \new Lyrics \lyricsto "priestsReligious" { \stMargueriteBourgeoysText }
-    \new Lyrics \lyricsto "priestsReligious" { \stMargueriteDYouvilleText }
+    % \new Lyrics \lyricsto "priestsReligious" { \stMarieIncarnationText }
+    % \new Lyrics \lyricsto "priestsReligious" { \stMargueriteBourgeoysText }
+    % \new Lyrics \lyricsto "priestsReligious" { \stMargueriteDYouvilleText }
     \new Lyrics \lyricsto "priestsReligious" { \stThereseLisieuxText }
   >>
 }
@@ -721,12 +728,13 @@ spaceBetweenScores = \markup { \vspace #0.5 }
       \new Voice = "hearus" { \hearUsMelody }
     }
     \new Lyrics \lyricsto "hearus" { \hearUsTextA }
-    \new Lyrics \lyricsto "hearus" { \hearUsTextB }
-    \new Lyrics \lyricsto "hearus" { \hearUsTextC }
-    \new Lyrics \lyricsto "hearus" { \hearUsTextD }
-    \new Lyrics \lyricsto "hearus" { \hearUsTextE }
+    % \new Lyrics \lyricsto "hearus" { \hearUsTextB }
+    % \new Lyrics \lyricsto "hearus" { \hearUsTextC }
+    % \new Lyrics \lyricsto "hearus" { \hearUsTextD }
+    % \new Lyrics \lyricsto "hearus" { \hearUsTextE }
     \new Lyrics \lyricsto "hearus" { \hearUsTextF }
     \new Lyrics \lyricsto "hearus" { \hearUsTextG }
+    \new Lyrics \lyricsto "hearus" { \hearUsTextH }
   >>
 }
 
