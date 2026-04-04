@@ -8,7 +8,8 @@
 %             Remove some saints and petitions for this Short Form
 % 2026-04-02: Add Jianpu
 %             Change translation of St. Pier Giorgio Frassati to 聖傅喬治·傅拉薩提
-% 
+% 2026-04-04: Final corrections and revisions
+%
 % Engraved by Anthony Fok <anthony@anthonyfok.org>. Edmonton, AB, Canada
 
 \version "2.24.2"
@@ -20,7 +21,7 @@
 \header {
   title = "諸聖禱文"
   subtitle = "瑪利亞進教之佑堂華人天主堂 2026 年至聖之夜逾越節守夜禮專用"
-  subsubtitle = "已加 18 位候洗者主保聖名（短式，約 6 分 55 秒）"
+  subsubtitle = "已加 17 位候洗者主保聖名（短式，約七分鐘）2026年4月4日修訂"
   composer = "李振邦 (1923–1984)"
   tagline = ##f
 }
@@ -47,7 +48,7 @@
       \fill-line {
         % \on-the-fly #print-page-number-check-first
         % \fromproperty #'page:page-number-string % Page number
-        "瑪利亞進教之佑堂華人天主堂 2026 年至聖之夜逾越節守夜禮專用《諸聖禱文》（短式）" % Custom text or copyright
+        "瑪利亞進教之佑堂華人天主堂 2026 年至聖之夜逾越節守夜禮專用《諸聖禱文》（短式）2026年4月4日修訂" % Custom text or copyright
       }
     }
   }
@@ -55,7 +56,7 @@
     \fill-line {
       % \on-the-fly #print-page-number-check-first
       % \fromproperty #'page:page-number-string % Page number
-      "瑪利亞進教之佑堂華人天主堂 2026 年至聖之夜逾越節守夜禮專用《諸聖禱文》（短式）" % Custom text or copyright
+      "瑪利亞進教之佑堂華人天主堂 2026 年至聖之夜逾越節守夜禮專用《諸聖禱文》（短式）2026年4月4日修訂" % Custom text or copyright
     }
   }
 
@@ -103,9 +104,9 @@ saintsMelody = \relative c'' {
   b8 b a8 fis a8[ b] b4 \bar "||"
 }
 
-versiculus = \lyricmode { \set stanza = \markup { \with-color "red" "（領）" } }
-responsum = \lyricmode { \set stanza = \markup { \with-color "red" "（眾）" } }
-singInMandarin = \lyricmode { \set stanza = \markup { \with-color "red" "（國語）" } }
+versiculus = \lyricmode { \set stanza = \markup { \with-color #red "（領）" } }
+responsum = \lyricmode { \set stanza = \markup { \with-color #red "（眾）" } }
+singInMandarin = \lyricmode { \set stanza = \markup { \with-color #red "（國語）" } }
 
 kyrieText = \lyricmode {
   \versiculus
@@ -248,7 +249,7 @@ stAnnaWangText = \lyricmode {
 }
 
 stEdithSteinText = \lyricmode {
-  \rt 聖女埃迪特 施 泰 \bd 因，
+  \rt "聖女埃迪 ·" 施 泰 \bd 因，
   % St. Edith (Stein) (1942) ^^2026^^
   \saintsResponseText
 }
@@ -307,7 +308,7 @@ stPopeJohnXXIIIText = \lyricmode {
 }
 
 stPopeJohnPaulIIText = \lyricmode {
-  \rt 聖若望保 祿 二 \bd 世，
+  \rt 教宗聖若望保 祿 二 \bd 世，
   % Saint Pope John Paul the Second, ^^2026^^
   \saintsResponseText
 }
@@ -337,6 +338,12 @@ stFrancisXavierText = \lyricmode {
 stJohnVianneyText = \lyricmode {
   \rt 聖若翰 維 雅 \bd 納，
   % Saint John Vianney, (1859)
+  \saintsResponseText
+}
+
+stJohnBoscoText = \lyricmode {
+  \rt 聖若望 鮑 思 \bd 高，
+  % Saint John Bosco, (1888)
   \saintsResponseText
 }
 
@@ -419,14 +426,22 @@ stMonicaText = \lyricmode {
 }
 
 stKateriTekakwithaText = \lyricmode {
+  % replaced with stKateri in 2026
   %\rt 聖女加特麗·泰 卡 維 \bd 達，
   \rt "Saint Kateri Te" -- ka -- kwi -- tha,
   % Saint Kateri Tekakwitha, (1680) ^^2026^^ ^^Canada^^
   \saintsResponseText
 }
 
+stKateriText = \lyricmode {
+  % Special for 2026
+  \rt 聖女 加 特 \bd 麗，
+  % Saint Kateri Tekakwitha, (1680) ^^2026^^ ^^Canada^^
+  \saintsResponseText
+}
+
 allHolyMenWomenText = \lyricmode {
-  \rt 天上諸 位 聖 \bd 人，
+  \rt 天主的諸聖 人 聖 \bd 女，
   % All holy men and women, saints of God,
   \saintsResponseText
 }
@@ -445,6 +460,7 @@ saveUsResponseText = \lyricmode {
 
 saveUsTextA = \lyricmode {
   \versiculus
+  \override LyricText.color = #red
   \rt 望主 垂 \bd 憐，
   \responsum
   \saveUsResponseText
@@ -488,6 +504,7 @@ hearUsResponseText = \lyricmode {
 
 hearUsTextA = \lyricmode {
   \versiculus
+  \override LyricText.color = #red
   \rt 我 們 罪 \bd 人，
   \responsum
   \hearUsResponseText
@@ -710,7 +727,7 @@ jianpuStaff = #(define-music-function (melody) (ly:music?)
     \jianpuStaff { \saintsMelody }
     \new Staff {
       \new Voice = "priestsReligious" {
-        \textMark \markup { \small \with-color "teal" "司鐸及修道聖人 Priests and Religious" }
+        \textMark \markup { \small \with-color "teal" "司鐸及修道者 Priests and Religious" }
         \saintsMelody
       }
     }
@@ -718,6 +735,7 @@ jianpuStaff = #(define-music-function (melody) (ly:music?)
     \new Lyrics \lyricsto "priestsReligious" { \stFrancisStDominicText }
     \new Lyrics \lyricsto "priestsReligious" { \stFrancisXavierText }
     \new Lyrics \lyricsto "priestsReligious" { \stJohnVianneyText }
+    \new Lyrics \lyricsto "priestsReligious" { \stJohnBoscoText }
     % \new Lyrics \lyricsto "priestsReligious" { \stBrotherAndréText }
     \new Lyrics \lyricsto "priestsReligious" { \stGenevièveText }
     \new Lyrics \lyricsto "priestsReligious" { \stHildegardBingenText }
@@ -744,7 +762,8 @@ jianpuStaff = #(define-music-function (melody) (ly:music?)
     }
     \new Lyrics \lyricsto "laity" { \stPierGiorgioFrassatiText }
     \new Lyrics \lyricsto "laity" { \stMonicaText }
-    \new Lyrics \lyricsto "laity" { \stKateriTekakwithaText }
+    % \new Lyrics \lyricsto "laity" { \stKateriTekakwithaText }
+    \new Lyrics \lyricsto "laity" { \stKateriText }
     \new Lyrics \lyricsto "laity" { \allHolyMenWomenText }
   >>
 }
