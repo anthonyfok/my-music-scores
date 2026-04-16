@@ -60,10 +60,13 @@
   \applyOutput #'Voice #note-four f'8]
 \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
+\slurDashed
   \applyOutput #'Voice #note-three e'8[
+(
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-two d'8]
+)
 \time 3/8
 | \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
@@ -103,17 +106,16 @@
 \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
 \phrasingSlurDashed
-\slurDashed
   \applyOutput #'Voice #note-six a'8[
 \(
 (
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-five g'8]
-)
 \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-four f'8[
+)
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-five g'8]
@@ -135,16 +137,14 @@
 \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-four f'8[
-\(
 (
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-three e'8]
-)
 \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-two d'8[
-\)
+)
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-one c'8]
@@ -199,9 +199,11 @@
 | \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-four f'8[
+(
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-three e'8]
+)
 \time 3/8
 | \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
@@ -218,26 +220,26 @@
 | \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-five g'8[
+(
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-six a'8
-\set stemLeftBeamCount = #0
+)
+\set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-five g'8]
 \time 3/4
 | \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-four f'8[
-\(
 (
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-three e'8]
-  )
 \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-two d'8[
-\)
+)
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-one c'8]
@@ -256,20 +258,20 @@
 (
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
-  \applyOutput #'Voice #note-seven b'8
+  \applyOutput #'Voice #note-seven b'8]
 )
 \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
-  \applyOutput #'Voice #note-one c''8]^.
-\set stemLeftBeamCount = #0
-\set stemRightBeamCount = #1
-  \applyOutput #'Voice #note-two d''8[^.
-(
+  \applyOutput #'Voice #note-one c''8[^.
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
-  \applyOutput #'Voice #note-one c''8^.
-)
+  \applyOutput #'Voice #note-two d''8]^.
+(
 \set stemLeftBeamCount = #0
+\set stemRightBeamCount = #1
+  \applyOutput #'Voice #note-one c''8[^.
+)
+\set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-seven b'8]
   \applyOutput #'Voice #note-six a'4
@@ -288,6 +290,7 @@
   \applyOutput #'Voice #note-two d'8]
 \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
+\slurDashed
   \applyOutput #'Voice #note-four f'8[
   (
 \set stemLeftBeamCount = #1
@@ -299,14 +302,16 @@
 | \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-five g'8[
+(
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-six a'8]
+)
 \time 3/8
-| \set stemLeftBeamCount = #1
+| \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-seven bes'8[
-\set stemLeftBeamCount = #0
+\set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-six a'8
   (
@@ -317,7 +322,6 @@
 \time 3/4
 | \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
-\slurDashed
   \applyOutput #'Voice #note-four f'8[
 \(
   (
@@ -357,9 +361,11 @@
 | \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-one c''8[^.
+(
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-seven b'8]
+)
 \time 3/8
 | \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
@@ -376,16 +382,18 @@
 | \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-four f'8[
+(
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
-  \applyOutput #'Voice #note-three e'8]
-\set stemLeftBeamCount = #0
+  \applyOutput #'Voice #note-three e'8
+)
+\set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
-  \applyOutput #'Voice #note-four f'8[
+  \applyOutput #'Voice #note-four f'8]
 \time 1/4
 | \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
-  \applyOutput #'Voice #note-five g'8
+  \applyOutput #'Voice #note-five g'8[
 (
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
@@ -478,12 +486,10 @@
   \applyOutput #'Voice #note-two d'8]
 \set stemLeftBeamCount = #0
 \set stemRightBeamCount = #1
-\slurDashed
-  \applyOutput #'Voice #note-four f'8[(
+  \applyOutput #'Voice #note-four f'8[
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
-  \applyOutput #'Voice #note-three e'8])
-  \slurSolid
+  \applyOutput #'Voice #note-three e'8]
   \applyOutput #'Voice #note-two d'4
 \time 3/8
 | \set stemLeftBeamCount = #0

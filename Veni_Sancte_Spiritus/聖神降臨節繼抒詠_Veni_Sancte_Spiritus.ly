@@ -21,13 +21,13 @@
     \override #'(font-name . "Gentium Book Basic Bold")
     "Pentecost Sequence: Veni Sancte Spiritus"
   }
-  subtitle = "聖神降臨誦（白話文）版"
+  subtitle = "聖神降臨誦（白話文）2019年修訂版"
   copyright = \markup {
     \override #'(baseline-skip . 2)
     \teeny {
       \left-column {
         \small \line {
-          可將會眾分為兩邊詠唱此曲。後立刻接唱：福音前歡呼 - Alelluia!
+          可將會眾分為兩邊詠唱此曲。後立刻接唱：福音前歡呼 - Alleluia!
         }
         \line {
           詞：Pope Innocent III (1198–1216)
@@ -37,7 +37,7 @@
         \line {
           "來源：《彌撒經歌匯萃》(北京)；" \italic "Graduale Romanum"
           % ※ 雙語版植譜：加拿大愛民頓瑪利亞進教之佑華人天主堂 (2015-04-23)
-          ※ 此雙語版以 LilyPond 植譜 (af, revised 2018-04-29, Edmonton, AB)
+          ※ 此雙語版以 LilyPond 植譜 (af, revised 2019-06-09, Edmonton, AB)
         }
       }
     }
@@ -104,7 +104,7 @@ melody = \relative c' {
   d8 d g, a c b a4 \bl  a8 bes a[ g] a f g f4 \bl  e8 g a d, f e d4 \bll
   %d'8 d g, a c b a4 \bl  a8 bes a[ g] a f g f4 \bl  e8 g a d, f e d4 \bll
   
-  d8[ e d] c4( d) \bb  c8 f e[ d] d4 | \bar "|."
+  d8[ e d] c4( d) \bb  c8 f e[( d]) d4 | \bar "|."
 }
 
 bd = \once \override LyricText #'self-alignment-X = #-0.63
@@ -148,8 +148,8 @@ chineseTextOdd = \lyricmode {
   \set stanza = #"7. "
   求 祢 洗 淨 我 們 的 污 \bd 穢， 求 祢 醫 治 我 們 的 創 \bd 傷， 滋 潤 我 們 的 憔 \bd 悴。
   \set stanza = #"9. "
-  信 祢 的 人 求 扶 \bd 助， 賜 與 豐 富 的 寵 \bd 恩， 施 以 慈 愛 的 照 \bd 顧。
-
+ %信 祢 的 人 求 扶 \bd 助， 賜 與 豐 富 的 寵 \bd 恩。 施 以 慈 愛 的 照 \bd 顧。
+  信 祢 的 人 求 扶 \bd 助， 施 以 慈 愛 的 照 \bd 顧， 賜 與 七 件 神 _ \bd 恩。
   \set stanza = #"(齊唱)"
   A -- men.  Al -- le -- lú -- ia.
 }

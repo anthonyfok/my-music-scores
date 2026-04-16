@@ -485,11 +485,14 @@
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-two d'8]
 \set stemLeftBeamCount = #0
+\slurDashed
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-four f'8[
+  (
 \set stemLeftBeamCount = #1
 \set stemRightBeamCount = #1
   \applyOutput #'Voice #note-three e'8]
+  ) \slurSolid
   \applyOutput #'Voice #note-two d'4
 \time 3/8
 | \set stemLeftBeamCount = #0

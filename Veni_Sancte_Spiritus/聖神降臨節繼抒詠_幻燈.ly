@@ -4,6 +4,7 @@
 % by Anthony Fok, 2015-04-22 to 2015-04-23
 %
 % 2018-04-29: 使用台灣(?)譯白話文「聖神降臨誦」
+% 2019-06-09: 調整歌詞以協韻 (sacrum septenarium 賜與七件神恩)
 %
 % This work is licensed under a
 % Creative Commons Attribution-ShareAlike 4.0 International License.
@@ -58,7 +59,7 @@
   ragged-last = ##t
   ragged-bottom = ##t
   %ragged-last-bottom = ##t
-  %ragged-right = ##t
+  ragged-right = ##t
   
   %top-margin = 0.75\in
   top-margin = 0.15\in
@@ -70,11 +71,14 @@
   %markup-system-spacing #'basic-distance = #-20
   markup-system-spacing #'padding = #3
   %system-system-spacing #'basic-distance = #14
-  system-system-spacing #'padding = #2
+  system-system-spacing = #'((basic-distance . 15)
+                             (minimum-distance . 10)
+                             (padding . 1)
+                             (stretchability . 2000))
   %min-systems-per-page = 6
   
   
-    oddHeaderMarkup = \markup {
+  oddHeaderMarkup = \markup {
     \setbgcolor
     \with-color #white
     \fill-line {
@@ -103,33 +107,36 @@ bll = { | \bar "||" \break }
 
 sd = { \set melismaBusyProperties = #'() \slurDashed }
 ss = { \slurSolid \unset melismaBusyProperties }
-
+smbp = { \set melismaBusyProperties = #'() }
+usmbp = { \unset melismaBusyProperties }
+%psd = { \set melismaBusyProperties = #'() \phrasingSlurDashed }
+%pss = { \phrasingSlurSolid \unset melismaBusyProperties }
 
 melody = \relative c' {
   %\tempo "Recitativo legato"
   \global
   \autoBeamOff
   
-  c8 d e f e d c d4 \bl  f8 g a bes a[ g] f g a4 \bl c,8 d f g f[ e] d c d4 \bll
+  c8 d e f e d c d4 \bl  f8 g a bes \slurDashed\phrasingSlurDashed a[\(( g]) f g\) a4 \bl c,8 d f g f\([( e]) d\) c d4 \slurSolid\phrasingSlurSolid \bll
   %c8 d e f e[ d] c d4 \bl  f8 g a bes a[ g f] g a4 \bl c,8 d f g f[ e d] c d4 \bll
   
-  a'8 c d d c
+  a'8 c d d \sd c(
   \once \override Voice.Accidental.stencil = ##f
-  b c d4 \bl  c8 a c b g f e d c4 \bl  g'8 f g a g f[ e] d c d4 \bll
+  b) c d4 \bl  c8 a \sd c( b) \ss g f e d c4 \bl  g'8 f g a g \phrasingSlurDashed\slurDashed f\([( e]) d\) \slurSolid\phrasingSlurSolid c d4 \bll
   %a'8 c d d c[ b] c d4 \bl  c8 a c[ b] g f[ e] d c4 \bl  g'8 f g[ a] g f[ e d] c d4 \bll
   
-  d'8 d c[ b] c d[ c] b a4 \bl  f8 d c d f g f4 \bl  g8 a bes a[ g] f[ e] d c d4 \bll
+  d'8 d c[( b]) c d[( c]) b a4 \bl  f8 d c d \smbp f( g) \usmbp f4 \bl  g8 a bes a[( g]) \slurDashed\phrasingSlurDashed f\([( e]) d\) \slurSolid\phrasingSlurSolid c d4 \bll
   %d'8 d c[ b] c d[ c] b a4 \bl  f8 d c d f g f4 \bl  g8[ a] bes a g f e[ d c] d4 \bll
   
   a'8 c
   \once \override Voice.Accidental.stencil = ##f
-  b a b c b a g4 \bl  a8 a f e f g f e d4 \bl  e8 g a g c b a4 \bll
+  \sd b( a) \ss b c b a g4 \bl  a8 a f e f \sd g( f) \ss e d4 \bl  e8 g a g c b a4 \bll
   %a8 c b[ a] b c[ b] a g4 \bl  a8 a f[ e] f g[ f] e d4 \bl  e8 g a g c b a4 \bll
   
-  d8 d g, a c b a4 \bl  a8 bes a[( g]) a f g f4 \bl  e8 g a d, f e d4 \bll
+  d8 d g, a c b a4 \bl  a8 bes a[( g]) a f g f4 \bl  e8 g a d, \sd f( e) \ss d4 \bll
   %d'8 d g, a c b a4 \bl  a8 bes a[ g] a f g f4 \bl  e8 g a d, f e d4 \bll
   
-  d8[ e d] c4( d) \bb  c8 f e[ d] d4 | \bar "|."
+  d8[ e d] c4( d) \bb  c8 f e[( d]) d4 | \bar "|."
 }
 
 bd = \once \override LyricText #'self-alignment-X = #-0.63
@@ -139,19 +146,19 @@ fpb = \once \override LyricText #'self-alignment-X = #0.72
 
 chineseTextOne = \lyricmode {
   \set stanza = #"1. "
-  天 主 聖 \pn 神, 求 祢 降 \bd 臨； 從 至 高 的 天 __ _ _ \bd 庭， 放 射 出 祢 的 __ _ 光 \bd 明。
+  天 主 聖 \bd 神， 求 祢 降 \bd 臨； 從 至 高 的 天 __ _ _ \bd 庭， 放 射 出 祢 的 __ _ 光 \bd 明。
 }
 chineseTextTwo = \lyricmode {
   \set stanza = #"2. "
-  窮 人 慈 \pn 父, 求 速 降 \bd 臨！ 恩 寵 施 \bd 主, 求 祢 降 \bd 臨！ 心 靈 真 \pn 光, 求 祢 降 \bd 臨！
+  窮 人 慈 \bd 父， 求 速 降 \bd 臨！ 恩 寵 施 \bd 主, 求 祢 降 \bd 臨！ 心 靈 真 \bd 光， 求 祢 降 \bd 臨！
 }
 chineseTextThree = \lyricmode {
   \set stanza = #"3. "
-  最 慰 人 心 靈 _ 聖 \pn 神, 我 們 衷 心 歡 迎 的 嘉 \pn 賓! 人 生 旅 途 舒 適 的 庇 \bd 蔭。
+  最 慰 人 心 靈 __ _ 聖 \bd 神， 我 們 衷 心 歡 迎 的 嘉 \bd 賓！ 人 生 旅 途 舒 適 的 庇 \bd 蔭。
 }
 chineseTextFour = \lyricmode {
   \set stanza = #"4. "
-  在 勞 苦 \pn 中, 祢 是 憩 \pn 息; 在 酷 熱 __ _ \pn 裏, 祢 是 清 \pn 風; 在 悲 痛 \pn 時, 祢 是 __ _ 慰 \bd 藉。
+  在 勞 苦 \bd 中， 祢 是 憩 \bd 息； 在 酷 熱 __ _ \pn 裏, 祢 是 清 \bd 風； 在 悲 痛 \bd 時， 祢 是 __ _ 慰 \bd 藉。
 }
 chineseTextFive = \lyricmode {
   \set stanza = #"5. "
@@ -171,7 +178,9 @@ chineseTextEight = \lyricmode {
 }
 chineseTextNine = \lyricmode {
   \set stanza = #"9. "
-  信 祢 的 人 求 扶 \bd 助， 賜 與 豐 富 的 寵 \bd 恩， 施 以 慈 愛 的 照 \bd 顧。
+  % Modified to fit Cantonese pronunciation better
+  % 信 祢 的 人 求 扶 \bd 助， 賜 與 豐 富 的 寵 \bd 恩， 施 以 慈 愛 的 照 \bd 顧。
+  信 祢 的 人 求 扶 \bd 助， 施 以 慈 愛 的 照 \bd 顧， 賜 與 七 件 神 __ _ \bd 恩。
 }
 chineseTextTen = \lyricmode {
   \set stanza = #"10. "
