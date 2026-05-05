@@ -1,8 +1,26 @@
 \version "2.24.0"
 
+\include "../AMDG/jianpu10a-afok.ly"
+
 \header {
   title = "只有祢永恆的主"
-  tagline = ##f
+  subtitle = "(2026-05-05 draft music score, Edmonton.  All feedback welcome!)"
+  tagline = "2026-05-05 draft music score, Edmonton.  All feedback welcome!"
+}
+
+\paper {
+  #(set-paper-size "letter")
+  myStaffSize = #20
+  #(define fonts
+     (make-pango-font-tree "C059, Noto Serif HK SemiBold"
+                           "LilyPond Sans Serif"
+                           "LilyPond Monospace"
+                           (/ myStaffSize 20)))
+  top-margin = 0.5\in
+  bottom-margin = 0.5\in
+  left-margin = 0.5\in
+  right-margin = 0.5\in
+  indent = 0
 }
 
 global = {
@@ -33,7 +51,7 @@ harmony = \chordmode {
   % interlude
   c1:aug | c1:5.2 | c1:aug
 
-  c1 | r2 d2:m | g1:7 | c1
+  c1:aug | d2:m g4:sus4 r4 | s1 | s2 c2 |
 }
 
 melody = \relative c' {
@@ -99,6 +117,71 @@ melody = \relative c' {
   \bar "|."
 }
 
+jianpuMelody = \relative c' {
+  \global
+
+  % Intro
+  s1*8
+
+  % 誰知心痛苦
+  g8 e' e d16 e~ e4 r |
+  g,8 e'~ \tuplet 3/2 { e8 e d } e4 r |
+  g,8 e' e d16 e~ e4 \tuplet 3/2 { e8 f g } |
+  g8. f16~ f2 r4 |
+  % 只有你永恆的主
+  g8 f16 f~ f4. c8 g f' |
+  e2. c8 \acciaccatura { d16 } e8 |
+  d4. d16[ c] a4 b8 c |
+  e8( d16) d16~ d2 r4 |
+
+  % 誰犧牲富足
+  g,8 e' e d16 e~ e4 r |
+  g,8 e'~ \tuplet 3/2 { e8 e d } e4 r |
+  g,8 e' e16 e( d16) e~ e4 \tuplet 3/2 { e8 f g } |
+  g8 f16 f16~ f2 r4 |
+  % 只有你永恆的主
+  g8 f16 f~ f4. c8 g f' |
+  e2 r8 c d e |
+  d2 b8. c16~ c8 d16[ c] |
+  c2. r8
+
+  % 人海中常失落
+  c8 | a'8. a16~ a8 a d b4 a16 b |
+  a8 g g a e16[ d] c4 d16 e |
+  f4 f8 a16 g~ g4 g8[ a16] e~ |
+  e2. r8
+  % 求恩主啟迪
+  c8 | a'8. a16~ a8 d( b) b4 a8 |
+  g4 e16 d'8( c16) c4. c16 b |
+  c8 a4 c16 b  c8 a a b16 c~ |
+  c8 d~ d2 r8.
+
+% \mark \markup \box "Chorus"
+  g,16 | d'8 c c b16 c~ c4 \tuplet 3/2 { g8 g( e) } |
+  b'4. c16[ a] a4. a8 |
+  e'8 d d cis16 d~ d4 \tuplet 3/2 { d8 c a } |
+  c4. b8 \acciaccatura bes8( b4) r8
+  
+  g8 | d'8 c c b16 c~ c4 r8 g |
+  b4. c16[ a] a4. a8 |
+  e'8. d16~ d8 a  b8. c16~ c8 d( |
+  c8) c~ c2. |
+
+  R1*3
+  \bar "||"
+
+%  c1^
+%  \markup \italic "Last time to Coda" |
+
+%  \mark \markup \box "Coda"
+  r2 r4 r8 a8 |
+  e'8. d16~ d8 c e d c a16 g~ |
+  g4 r c2~ | c2 r2 |
+  \bar "|."
+}
+
+
+
 bd = \once \override LyricText.self-alignment-X = #-0.72
 
 verse = \lyricmode {
@@ -123,6 +206,19 @@ verse = \lyricmode {
       \set chordChanges = ##f
       \harmony
     }
+    \new JianpuStaff \with {
+      \override VerticalAxisGroup.default-staff-staff-spacing =
+      #'((basic-distance . 0)
+         (minimum-distance . 0)
+         (padding . 0.4))
+      fontSize = #-2
+      \override StaffSymbol.staff-space = #(magstep -1.7)
+      %\override Flag.staff-space = #(magstep -2)
+      %\override Flag.color = red
+      %\flagStyleStacked
+    }{
+      \jianpuMusic { \jianpuMelody }
+    }
     \new Staff {
       \clef treble
       \melody
@@ -133,8 +229,8 @@ verse = \lyricmode {
     \context {
       \Lyrics
       \override LyricText.font-size = #2
-      \override LyricText.font-name = #"Noto Serif CJK HK"
-      % \override LyricText.font-name = #"Noto Serif HK SemiBold"
+      % \override LyricText.font-name = #"Noto Serif CJK HK"
+      \override LyricText.font-name = #"Noto Serif HK SemiBold"
     }
   }
   \midi { }
